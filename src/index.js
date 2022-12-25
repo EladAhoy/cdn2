@@ -3,11 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Navbar from './Navbar';
+import Content from './Content';
+import Logo from './Logo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Navbar />
+    <Logo />
+    <Content />
   </React.StrictMode>
 );
 
