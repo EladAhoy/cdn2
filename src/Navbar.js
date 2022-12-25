@@ -2,14 +2,17 @@ import './Navbar.css';
 import Logo from './Logo';
 
 function Navbar() {
-  return (<nav className="navbar">
+  return (
+    <nav className="navbar">
     <Logo />
-    <h1>Example Site</h1>
+      <div className='inner-text'>
+        <h1>Example Site</h1>
     <ul>
       <li>Pricing</li>
       <li>About</li>
       <li>Contact</li>
-    </ul>
+        </ul>
+      </div>
   </nav>);
 }
 
