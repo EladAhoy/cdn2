@@ -3,7 +3,7 @@ import LogoInContent from './LogoInContent';
 
 export default function Content() {
   return (
-    <div className="content">
+    <main className="content">
       <h1>Fun facts about React</h1>
       <div className="content__logo-container">
         <LogoInContent />
@@ -15,7 +15,7 @@ export default function Content() {
         <li>Is maintained by Facebook</li>
         <li>Powers thousands of enterprise apps, including mobile apps</li>
       </ul>
-    </div>);
+    </main>);
 }
 
 
