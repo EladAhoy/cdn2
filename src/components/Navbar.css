@@ -1,11 +1,9 @@
 .navbar {
   text-align: left;
   display: flex;
-  background-color: #282c34;
+  background-color: #21222A;
   color: white;
   align-items: center;
-  flex: 1;
-  ;
 }
 
 .inner-text {
@@ -16,4 +14,8 @@
 .navbar li {
   display: inline;
   padding-inline: 1rem;
+}
+
+.navbar h1 {
+  color: #61DAFB;
 }

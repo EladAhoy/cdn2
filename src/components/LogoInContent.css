@@ -1,11 +1,21 @@
-.App-logo {
-  height: 3rem;
-  width: 3rem;
+.content-logo {
+  height: 50%;
+  width: 100%;
+  left: 50%;
+  transform: translateX(50%);
   pointer-events: none;
+  max-height: 100%;
+  max-width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  margin: auto;
+  filter: grayscale(1);
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
+  .content-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
