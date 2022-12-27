@@ -1,7 +1,7 @@
 import logo from '../img/logo.svg';
 import './Logo.css';
 
-function Logo() {
+export default function Logo() {
   return (
     <div className="App">
       <header className="App-header">
@@ -11,4 +11,4 @@ function Logo() {
   );
 }
 
-export default Logo;
+

@@ -1,7 +1,7 @@
 import './Footer.css';
 import Logo from './Logo';
 
-function Footer() {
+export default function Footer() {
   return (
     <div className="footer">
       <Logo />
@@ -9,4 +9,3 @@ function Footer() {
     </div>);
 }
 
-export default Footer;

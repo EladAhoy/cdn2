@@ -1,6 +1,6 @@
 import './Content.css';
 
-function Content() {
+export default function Content() {
   return (
     <div className="content">
       <h1>Fun facts about React</h1>
@@ -14,4 +14,4 @@ function Content() {
     </div>);
 }
 
-export default Content;
+
