@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className="navbar">
       <Logo />
       <div className='inner-text'>
-        <h1>Example Site</h1>
+        <h1>ReactFacts</h1>
         <ul>
           <li>Pricing</li>
           <li>About</li>
