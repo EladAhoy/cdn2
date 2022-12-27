@@ -6,6 +6,12 @@
 
 .content h1 {
   margin: 0;
+  letter-spacing: -0.05rem;
+  margin-block-start: 1rem;
+}
+
+.content__facts-list li {
+  padding-block: 1rem;
 }
 
 .content__facts-list li::marker {
