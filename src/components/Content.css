@@ -8,7 +8,7 @@
   margin: 0;
 }
 
-div.content ul.facts-list li::marker {
+.content__facts-list li::marker {
   color: #61DAFB;
   font-size: 1.5rem;
 }

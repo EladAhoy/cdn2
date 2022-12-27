@@ -1,4 +1,4 @@
-.content-logo {
+.logo-in-content-container__content-logo {
   height: 50%;
   width: 100%;
   left: 50%;
@@ -15,7 +15,7 @@
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .content-logo {
+  .logo-in-content-container__content-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }

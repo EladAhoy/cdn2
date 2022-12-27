@@ -4,7 +4,7 @@ import './Logo.css';
 export default function Logo() {
   return (
     <div className="logo-container">
-      <img src={logo} className="App-logo" alt="logo" />     
+      <img src={logo} className="logo-container__App-logo" alt="logo" />     
     </div>
   );
 }

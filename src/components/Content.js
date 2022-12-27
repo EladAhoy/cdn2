@@ -5,10 +5,10 @@ export default function Content() {
   return (
     <div className="content">
       <h1>Fun facts about React</h1>
-      <div className="logo-container">
+      <div className="content__logo-container">
         <LogoInContent />
       </div>
-      <ul class="facts-list">
+      <ul class="content__facts-list">
         <li>Was first released in 2013</li>
         <li>Was originally created by Jordan Walke</li>
         <li>Has over 100k stars on Github</li>

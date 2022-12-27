@@ -4,7 +4,7 @@ import './LogoInContent.css';
 export default function LogoInContent() {
   return (
     <div className="logo-in-content-container">
-      <img src={logo} className="content-logo" alt="logo" />
+      <img src={logo} className="logo-in-content-container__content-logo" alt="logo" />
     </div>
   );
 }
