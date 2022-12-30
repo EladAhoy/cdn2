@@ -1,10 +1,11 @@
 import './BusinessCard.css';
 import ProfilePic from './ProfilePic';
 import MailAndLinkedInButtons from './MailAndLinkedInButtons';
+import 'animate.css';
 
 export default function FunFacts() {
   return (
-    <article className="business-card-container">
+    <article className="business-card-container animate__animated animate__fadeInLeft">
       <div className="business-card__profile-pic-container">
         <ProfilePic />
       </div>
