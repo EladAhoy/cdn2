@@ -1,0 +1,39 @@
+.business-card-container {
+  margin: auto;
+  margin-block-start: 3rem;
+  text-align: left;
+  background: #1A1B21;
+  color: white;
+  width: 23rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  padding-block-end: 1rem;
+}
+
+.business-card-container h1.name {
+  margin: 0;
+  margin-block-start: 1rem;
+  font-weight: 700;
+  letter-spacing: 0rem;
+  text-align: center;
+}
+
+.business-card-container h4.role {
+  margin-block: 0;
+  font-weight: 400;
+  letter-spacing: 0rem;
+  text-align: center;
+  color: #F3BF99;
+}
+
+.business-card-container p.website {
+  margin: 0;
+  margin-block-start: 0.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  text-align: center;
+  color: #F5F5F5;
+}

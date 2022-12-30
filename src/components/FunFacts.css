@@ -1,0 +1,19 @@
+.fun-facts-container {
+  text-align: left;
+  color: white
+}
+
+.fun-facts-container h1 {
+  margin: 0;
+  letter-spacing: -0.05rem;
+  margin-block-start: 1rem;
+}
+
+.fun-facts__facts-list li {
+  padding-block: 0.5rem;
+}
+
+.fun-facts__facts-list li::marker {
+  color: #61DAFB;
+  font-size: 1.5rem;
+}

@@ -1,0 +1,21 @@
+.profile-pic-container__profile-pic {
+  width: 23rem;
+  pointer-events: none;
+  border-radius: 1rem 1rem 0rem 0rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .profile-pic-container__profile-pic {
+    /* animation: App-logo-spin infinite 20s linear; */
+  }
+}
+
+/* @keyframes App-logo-spin {
+  from {
+    transform: translateX(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+} */

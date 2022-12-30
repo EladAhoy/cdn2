@@ -1,20 +1,5 @@
-.content {
+main.content {
   text-align: left;
   padding: 1rem;
   color: white
-}
-
-.content h1 {
-  margin: 0;
-  letter-spacing: -0.05rem;
-  margin-block-start: 1rem;
-}
-
-.content__facts-list li {
-  padding-block: 1rem;
-}
-
-.content__facts-list li::marker {
-  color: #61DAFB;
-  font-size: 1.5rem;
 }
