@@ -37,3 +37,10 @@
   text-align: center;
   color: #F5F5F5;
 }
+
+.business-card-container h3.about {
+  font-weight: 700;
+  letter-spacing: 0rem;
+  text-align: left;
+  color: white
+}

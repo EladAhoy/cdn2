@@ -12,6 +12,7 @@ export default function FunFacts() {
       <h4 className='role'>Fullstack Developer</h4>
       <p className='website'>elad.website</p>
       <MailAndLinkedInButtons />
+      <h3 className='about'>About</h3>
     </article>);
 }
 
