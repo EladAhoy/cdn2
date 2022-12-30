@@ -9,6 +9,10 @@
   margin-block-start: 1rem;
 }
 
+.fun-facts__facts-list {
+  position: relative;
+}
+
 .fun-facts__facts-list li {
   padding-block: 0.5rem;
 }
