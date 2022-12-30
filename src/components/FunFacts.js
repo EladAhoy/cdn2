@@ -8,7 +8,7 @@ export default function FunFacts() {
       <div className="fun-facts__logo-container">
         <LogoInContent />
       </div>
-      <ul className="fun-facts__facts-list animate__animated animate__slideInDown">
+      <ul className="fun-facts__facts-list animate__animated animate__rollIn">
         <li>Was first released in 2013</li>
         <li>Was originally created by Jordan Walke</li>
         <li>Has over 100k stars on Github</li>
