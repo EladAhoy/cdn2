@@ -13,11 +13,11 @@
 }
 
 .business-card-container h1.name {
-  margin: 0;
-  margin-block-start: 1rem;
+  margin: 1rem 0 0;
   font-weight: 700;
   letter-spacing: 0rem;
   text-align: center;
+  font-size: 1.8rem
 }
 
 .business-card-container h4.role {
@@ -42,5 +42,11 @@
   font-weight: 700;
   letter-spacing: 0rem;
   text-align: left;
-  color: white
+  color: white;
+  margin-right: auto
+}
+
+.business-card-container :is(.buttons-and-details, .about) {
+  padding-inline: 1.5rem;
+  text-align: left;
 }
