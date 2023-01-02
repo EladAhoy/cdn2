@@ -1,5 +1,5 @@
-.business-card-container {
-  margin: auto;
+.business-card-container-left {
+  margin-right: auto;
   margin-block-start: 3rem;
   text-align: left;
   background: #1A1B21;
@@ -12,7 +12,7 @@
   padding-block-end: 1rem;
 }
 
-.business-card-container h1.name {
+.business-card-container-left h1.name {
   margin: 1rem 0 0;
   font-weight: 700;
   letter-spacing: 0rem;
@@ -20,7 +20,7 @@
   font-size: 1.8rem
 }
 
-.business-card-container h4.role {
+.business-card-container-left h4.role {
   margin-block: 0;
   font-weight: 400;
   letter-spacing: 0rem;
@@ -28,7 +28,7 @@
   color: #F3BF99;
 }
 
-.business-card-container p.website {
+.business-card-container-left p.website {
   margin: 0;
   margin-block-start: 0.5rem;
   font-weight: 400;
@@ -38,7 +38,7 @@
   color: #F5F5F5;
 }
 
-.business-card-container h3.about {
+.business-card-container-left h3.about {
   font-weight: 700;
   letter-spacing: 0rem;
   text-align: left;
@@ -46,7 +46,7 @@
   margin-right: auto
 }
 
-.business-card-container :is(.buttons-and-details, .about) {
+.business-card-container-left :is(.buttons-and-details, .about) {
   padding-inline: 1.5rem;
   text-align: left;
 }
