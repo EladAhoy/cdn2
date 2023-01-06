@@ -4,18 +4,13 @@
   border-radius: 1rem 1rem 0rem 0rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .profile-pic-container__profile-pic {
-    /* animation: App-logo-spin infinite 20s linear; */
-  }
+.profile-pic-container {
+  min-height: 17rem;
+  display: flex;
+  place-items: center;
+  place-content: center;
 }
 
-/* @keyframes App-logo-spin {
-  from {
-    transform: translateX(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-} */
+.profile-pic-container svg {
+  width: 80%
+}

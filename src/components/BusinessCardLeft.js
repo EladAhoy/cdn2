@@ -9,14 +9,14 @@ export default function BusinessCardLeft() {
 
       <section className="profile_pic">
         <div className="business-card__profile-pic-container">
-          <ProfilePic />
+          <ProfilePic src='../img/ticket-2.svg' />
         </div>
       </section>
 
       <section className="buttons-and-details">
-        <h1 className='name'>Elad Sheskin</h1>
-        <h4 className='role'>Fullstack Developer</h4>
-        <p className='website'>elad.website</p>
+        <h1 className='name'>Mock Checkout </h1>
+        <h4 className='role'>sample project</h4>
+        <p className='website'>&nbsp</p>
         <MailAndLinkedInButtons />
       </section>
 

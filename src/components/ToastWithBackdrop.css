@@ -38,7 +38,7 @@ div.toast {
   z-index: 1001;
   font-size: 2rem;
   display: none;
-  padding: 3rem;
+  padding: 1rem;
   box-shadow: 0px 0px 13px 0px #3F39704D;
   border-radius: 1rem;
   background-color: #F8F8FB;
@@ -83,8 +83,13 @@ div.toast.show {
   text-align: left;
 }
 
-div.toast>div.textWrap {
+div.toast>div.textWrap h1 {
   text-align: left;
+  margin: 0 1rem;
+  font-weight: 700;
+  letter-spacing: 0rem;
+  text-align: center;
+  font-size: 1.8rem
 }
 
 div.toast {

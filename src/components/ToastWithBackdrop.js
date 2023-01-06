@@ -8,11 +8,10 @@ export default function ToastWithBackdrop(props) {
     else textDiv?.classList.remove('show');
   }, [props.show]);
   return (
-    <article id="backdrop show" >
-      <div className='toast'>
+    <article id="backdrop show">
+      <div className="toast">
         <div className="textWrap">
-          toastHeaderText
-          toastText
+          <h1>Welcome!</h1>
         </div>
       </div>
     </article>);
