@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './Content.css';
 import FunFacts from './FunFacts';
 import BusinessCard from './BusinessCard';
@@ -6,14 +6,14 @@ import BusinessCardLeft from './BusinessCardLeft';
 import ToastWithBackdrop from './ToastWithBackdrop';
 
 export default function Content() {
-  const showToastRef = useRef(true);
+  const [showToast, setshowToast] = useState(true);
   useEffect(() => {
-    const timer = setTimeout(() => showToastRef.current = false, 1000);
+    const timer = setTimeout(() => setshowToast(false), 5800);
     return () => clearTimeout(timer);
   }, []);
   return (
     <main className="content">
-      <ToastWithBackdrop show={showToastRef.current} />
+      <ToastWithBackdrop show={showToast} />
       <section className='fun-facts'>
         <FunFacts />
       </section>

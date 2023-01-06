@@ -9,10 +9,7 @@
   flex-direction: column;
   box-sizing: border-box;
   backdrop-filter: blur(10px);
-  transition: opacity 350ms linear;
-  min-height: var(--maxH);
-  max-height: var(--maxH);
-  background: var(--backdrop);
+  background: initial;
   height: 100vh;
   background-position: initial;
   background-repeat: initial;
@@ -21,20 +18,15 @@
   padding: 1.25rem;
   opacity: 1;
   z-index: 2;
+  padding: 4rem 4rem 4rem 2.5rem !important;
+  width: 100%;
+  max-width: unset;
 }
 
 #backdrop.hide {
+  transition: opacity 350ms linear;
   background: transparent;
   backdrop-filter: blur(0);
-}
-
-@media screen and (min-width: 700px) {
-  #backdrop.show {
-    padding: 4rem 4rem 4rem 2.5rem !important;
-    width: 100%;
-    max-width: unset;
-
-  }
 }
 
 div.toast {

@@ -1,10 +1,15 @@
+import { useEffect } from 'react';
 import './ToastWithBackdrop.css';
-import classNames from "classnames";
 
-export default function ToastWithBackdrop(showToastRef) {
+export default function ToastWithBackdrop(props) {
+  useEffect(() => {
+    const textDiv = document.querySelector('.toast');
+    if (props.show) textDiv?.classList.add('show');
+    else textDiv?.classList.remove('show');
+  }, [props.show]);
   return (
-    <article id="backdrop" className={classNames({ show: showToastRef ? true : false })} >
-      <div className={classNames('show-from-button', 'toast', { show: showToastRef ? true : false })} >
+    <article id="backdrop show" >
+      <div className='toast'>
         <div className="textWrap">
           toastHeaderText
           toastText
