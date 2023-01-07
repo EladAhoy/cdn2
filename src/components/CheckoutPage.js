@@ -4,9 +4,9 @@ import './CheckoutPage.css';
 export default function CheckoutPage() {
   const [upcomingShows] = useState([
     { id: 0, name: 'Please Select', cost: 0 },
-    { id: 1, name: 'show1', cost: 50 },
-    { id: 2, name: 'show2', cost: 100 },
-    { id: 3, name: 'show3', cost: 200 }]);
+    { id: 1, name: 'Show 1', cost: 50 },
+    { id: 2, name: 'Show 2', cost: 100 },
+    { id: 3, name: 'Show 3', cost: 200 }]);
   const [selectedShow, setSelectedShow] = useState();
   const [quantity, setQuantity] = useState(1);
   const [billingInfo, setBillingInfo] = useState({
@@ -38,7 +38,11 @@ export default function CheckoutPage() {
 
   const calculateFinalCost = () => {
     // Calculate the final cost based on the selected show, quantity, and fees
-    if (!selectedShow) return;
+    if (!selectedShow || selectedShow?.id === 0) {
+      setFinalCost(0);
+      setFees(0);
+      return;
+    }
     const fees = 10 * quantity;
     const showCost = selectedShow.cost * quantity;
     setFinalCost(showCost + fees);
@@ -46,7 +50,7 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className='checkout-container'>
+    <div className='checkout-container animate__animated animate__rotateInUpLeft'>
       <h1>Mock Checkout</h1>
       <form className='checkout-form'>
         <section>
