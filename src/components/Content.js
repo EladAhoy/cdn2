@@ -4,6 +4,7 @@ import FunFacts from './FunFacts';
 import BusinessCard from './BusinessCard';
 import BusinessCardLeft from './BusinessCardLeft';
 import ToastWithBackdrop from './ToastWithBackdrop';
+import CheckoutPage from './CheckoutPage';
 
 export default function Content() {
   const [showToast, setshowToast] = useState(true);
@@ -17,10 +18,13 @@ export default function Content() {
       <section className='fun-facts'>
         <FunFacts />
       </section>
+      <section className='shows'>
+        <CheckoutPage />
+      </section> 
       <section className='cards'>
         <BusinessCard />      
         <BusinessCardLeft />
-      </section>      
+      </section>        
     </main>);
 }
 

@@ -1,5 +1,5 @@
 .business-card-container-left {
-  margin-right: auto;
+  margin-inline: 2rem auto;
   margin-block-start: 3rem;
   text-align: left;
   background: #1A1B21;

@@ -3,6 +3,7 @@ section.buttons-container {
   display: flex;
   gap: 2rem;
   text-align: center;
+  min-height: 2.5rem;
 }
 
 section.buttons-container button {

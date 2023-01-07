@@ -15,16 +15,14 @@ export default function BusinessCardLeft() {
 
       <section className="buttons-and-details">
         <h1 className='name'>Mock Checkout </h1>
-        <h4 className='role'>sample project</h4>
-        <p className='website'>&nbsp</p>
-        <MailAndLinkedInButtons />
+        <h4 className='role'>Sample Project</h4>
+        {/* <p className='website'>&nbsp</p> */}
+        <MailAndLinkedInButtons style={{ opacity: 0 }} />
       </section>
 
       <section className="about">
         <h3 className='about__header'>About</h3>
-        <p className='about__text'>Developing since 2015. Originaly LAMP
-          stack, continued to MERN and MEVN following market demand. My last adventure
-          included Ahoy!, an online yacht insurance platform for the US market.</p>
+        <p className='about__text'>The task is to create a mock checkout page for buying tickets to a show. Users should have the ability to select a show from a list of upcoming shows, select the quantity, enter their basic billing information (you don't need to actually accept real credit card data, just simulate how this part should work), and see their final cost with fees before checking out. It should look like TicketMaster's website checkout page as reference).</p>
       </section>
     </article>);
 }

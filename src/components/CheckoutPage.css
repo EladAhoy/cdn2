@@ -1,0 +1,87 @@
+input {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+}
+
+.checkout-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.checkout-form label {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.checkout-form button {
+  width: fit-content
+}
+
+form button {
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 0.5rem
+}
+
+button:hover {
+  background-color: #3e8e41;
+}
+
+input[type="number"] {
+  width: 2rem;
+  height: 2rem;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  padding: 0 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"]::-moz-inner-spin-button {
+  -moz-appearance: textfield;
+}
+
+fieldset {
+  padding: 2rem;
+}
+
+fieldset h2 {
+  margin-block-start: 0;
+}
+
+form section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+fieldset.delivery-details {
+  flex: 1;
+}

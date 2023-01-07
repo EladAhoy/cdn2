@@ -7,11 +7,11 @@ export default function Navbar() {
       <Logo />
       <div className='navbar__inner-text'>
         <h1>ReactFacts</h1>
-        <ul>
+        {/* <ul>
           <li>Pricing</li>
           <li>About</li>
           <li>Contact</li>
-        </ul>
+        </ul> */}
       </div>
     </nav>);
 }

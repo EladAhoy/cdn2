@@ -1,11 +1,11 @@
 main.content {
   text-align: left;
   padding: 1rem;
-  color: white
+  padding-block-end: 6rem;
+  color: white;
 }
 
 main.content section.cards {
   display: flex;
   justify-content: space-between;
-  gap: 16rem
 }
