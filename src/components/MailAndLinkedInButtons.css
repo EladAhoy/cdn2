@@ -4,6 +4,7 @@ section.buttons-container {
   gap: 2rem;
   text-align: center;
   min-height: 2.5rem;
+  justify-content: center;
 }
 
 section.buttons-container button {

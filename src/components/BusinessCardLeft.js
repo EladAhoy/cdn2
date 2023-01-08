@@ -17,7 +17,7 @@ export default function BusinessCardLeft() {
         <h1 className='name'>Mock Checkout </h1>
         <h4 className='role'>Sample Project</h4>
         {/* <p className='website'>&nbsp</p> */}
-        <MailAndLinkedInButtons style={{ opacity: 0 }} />
+        <MailAndLinkedInButtons style={{ opacity: 1 }} gitRef={{ gitName: 'mockCheckout' }} />
       </section>
 
       <section className="about">
