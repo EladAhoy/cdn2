@@ -9,3 +9,7 @@ main.content section.cards {
   display: flex;
   justify-content: space-between;
 }
+
+section.shows {
+  margin-block-start: 25rem;
+}

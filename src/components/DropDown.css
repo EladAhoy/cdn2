@@ -1,0 +1,72 @@
+nav.dropdwon-navbar {
+  display: flex;
+  flex-direction: column;
+}
+
+nav.dropdwon-navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav.dropdwon-navbar ul li {
+  width: 100px;
+}
+
+nav.dropdwon-navbar ul li button {
+  display: block;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 32px;
+  padding: 0 15px;
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+nav.dropdwon-navbar ul li {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0;
+  position: relative;
+}
+
+nav.dropdwon-navbar>ul>li>ul.nested-dropdown-list {
+  position: relative;
+  left: unset;
+
+}
+
+
+nav.dropdwon-navbar ul.nested-dropdown-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  /* margin-inline-start: 1rem; */
+  padding: 0;
+  gap: 0;
+  position: absolute;
+  top: 0;
+  left: 100px;
+  z-index: 5;
+}
+
+nav.dropdwon-navbar ul.nested-dropdown-list li {
+  display: block;
+  position: relative;
+}
+
+button {
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  width: 100%;
+}
+
+button:hover {
+  background: #f6f6f6;
+  color: #333
+}
