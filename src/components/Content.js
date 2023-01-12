@@ -6,6 +6,12 @@ import ToastWithBackdrop from './ToastWithBackdrop';
 import CheckoutPage from './CheckoutPage';
 import Navbar from './DropDown';
 
+function renderCards({ types }) {
+  if (!types) return;
+  const cards = types?.map((type) => <BusinessCard type={type} />);
+  return (cards);
+}
+
 export default function Content() {
   const [showToast, setshowToast] = useState(true);
   useEffect(() => {
@@ -228,8 +234,7 @@ export default function Content() {
         <CheckoutPage />
       </section> 
       <section className='cards'>
-        <BusinessCard type='profile' />
-        <BusinessCard type='mockCheckout' />              
+        {renderCards({ types: ['profile', 'mockCheckout', 'mockCheckout'] })}            
       </section>        
     </main>);
 }
