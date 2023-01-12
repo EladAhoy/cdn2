@@ -50,3 +50,56 @@
   padding-inline: 1.5rem;
   text-align: left;
 }
+
+.business-card-container-left {
+  margin-inline: 2rem auto;
+  margin-block-start: 3rem;
+  text-align: left;
+  background: #1A1B21;
+  color: white;
+  width: 23rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  padding-block-end: 1rem;
+}
+
+.business-card-container-left h1.name {
+  margin: 1rem 0 0;
+  font-weight: 700;
+  letter-spacing: 0rem;
+  text-align: center;
+  font-size: 1.8rem
+}
+
+.business-card-container-left h4.role {
+  margin-block: 0;
+  font-weight: 400;
+  letter-spacing: 0rem;
+  text-align: center;
+  color: #F3BF99;
+}
+
+.business-card-container-left p.website {
+  margin: 0;
+  margin-block-start: 0.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 150%;
+  text-align: center;
+  color: #F5F5F5;
+}
+
+.business-card-container-left h3.about {
+  font-weight: 700;
+  letter-spacing: 0rem;
+  text-align: left;
+  color: white;
+  margin-right: auto
+}
+
+.business-card-container-left :is(.buttons-and-details, .about) {
+  padding-inline: 1.5rem;
+  text-align: left;
+}

@@ -14,6 +14,11 @@ nav.dropdwon-navbar ul li {
   width: 100px;
 }
 
+nav.dropdwon-navbar ul li button:hover {
+  background: #f6f6f6;
+  color: #333
+}
+
 nav.dropdwon-navbar ul li button {
   display: block;
   text-decoration: none;
@@ -21,7 +26,11 @@ nav.dropdwon-navbar ul li button {
   font-size: 12px;
   line-height: 32px;
   padding: 0 15px;
-  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif
+  font-family: "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  cursor: pointer;
+  background-color: #333;
+  color: white;
+  width: 100%;
 }
 
 nav.dropdwon-navbar ul li {
@@ -57,16 +66,4 @@ nav.dropdwon-navbar ul.nested-dropdown-list {
 nav.dropdwon-navbar ul.nested-dropdown-list li {
   display: block;
   position: relative;
-}
-
-button {
-  cursor: pointer;
-  background-color: #333;
-  color: white;
-  width: 100%;
-}
-
-button:hover {
-  background: #f6f6f6;
-  color: #333
 }

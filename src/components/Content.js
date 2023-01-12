@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import './Content.css';
 import FunFacts from './FunFacts';
 import BusinessCard from './BusinessCard';
-import BusinessCardLeft from './BusinessCardLeft';
 import ToastWithBackdrop from './ToastWithBackdrop';
 import CheckoutPage from './CheckoutPage';
 import Navbar from './DropDown';
@@ -229,8 +228,8 @@ export default function Content() {
         <CheckoutPage />
       </section> 
       <section className='cards'>
-        <BusinessCard />      
-        <BusinessCardLeft />
+        <BusinessCard type='profile' />
+        <BusinessCard type='mockCheckout' />              
       </section>        
     </main>);
 }
