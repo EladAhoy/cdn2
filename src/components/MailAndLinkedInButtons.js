@@ -8,7 +8,7 @@ export default function MailAndLinkedInButtons(props?) {
     <section className="buttons-container">
     </section>);
 
-  if (props?.gitRef?.gitName === 'mockCheckout') return (
+  if (props?.gitRef) return (
     <section className="buttons-container">
       <button className='email' onClick={goToGit}>
         <CustomIcon type='git' />
@@ -17,7 +17,7 @@ export default function MailAndLinkedInButtons(props?) {
     </section>);
 
   function goToGit() {
-    const link = 'https://github.com/EladAhoy/cdn2';
+    const link = 'https://github.com/DontWorryYouCanMerge/cdn2';
     window.location.href = link;
   };
   const goToLinkedin = () => {

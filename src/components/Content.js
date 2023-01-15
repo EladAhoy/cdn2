@@ -8,7 +8,7 @@ import Navbar from './DropDown';
 
 function renderCards({ types }) {
   if (!types) return;
-  const cards = types?.map((type) => <BusinessCard type={type} />);
+  const cards = types?.map((type, index) => <BusinessCard key={index} type={type} />);
   return (cards);
 }
 
@@ -234,7 +234,7 @@ export default function Content() {
         <CheckoutPage />
       </section> 
       <section className='cards'>
-        {renderCards({ types: ['profile', 'mockCheckout', 'mockCheckout'] })}            
+        {renderCards({ types: ['profile', 'mockCheckout', 'navbar'] })}            
       </section>        
     </main>);
 }
