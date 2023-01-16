@@ -2,19 +2,21 @@ import './MailAndLinkedInButtons.css';
 import LinkedInIcon from './LinkedInIcon';
 import EmailIcon from './EmailIcon';
 import CustomIcon from './CustomIcon';
+import Backdrop from './Backdrop';
 
 export default function MailAndLinkedInButtons(props?) {
+
   if (props?.style?.opacity === 0) return (
     <section className="buttons-container">
     </section>);
 
-  if (props?.gitRef) return (
-    <section className="buttons-container">
-      <button className='email' onClick={goToGit}>
-        <CustomIcon type='git' />
-        Git
-      </button>
-    </section>);
+  if (props?.gitRef) {
+    return (
+      <section className="buttons-container">
+        <button className='email' onClick={goToGit}><CustomIcon type='git' /> Git</button>
+        <Backdrop customComponent='MockCheckout'></Backdrop>
+      </section>);
+  }
 
   function goToGit() {
     const link = 'https://github.com/DontWorryYouCanMerge/cdn2';
