@@ -1,0 +1,50 @@
+{
+  "project": {
+    "libraries": {
+      "cloudfairy": "/home/fiveminutes/.cloudfairy/libraries/cloudfairy"
+    },
+    "projectName": "New Infrastructure",
+    "globalConfig": {},
+    "components": [
+      {
+        "type": "component",
+        "properties": [
+          {
+            "name": "bucketName",
+            "defaultValue": "my-website",
+            "value": "portfolio"
+          },
+          {
+            "name": "indexPage",
+            "defaultValue": "/index.html",
+            "value": "/index.html"
+          },
+          {
+            "name": "errorPage",
+            "defaultValue": "/error.html",
+            "value": "/error.html"
+          }
+        ],
+        "localName": "portfolio",
+        "uuid": "bb2aaa25f8a3807a",
+        "qName": "cloudfairy/public-website",
+        "annotations": {}
+      }
+    ],
+    "connectors": [],
+    "metadata": {
+      "canvas": {
+        "x": 0,
+        "y": 0
+      },
+      "designer": {},
+      "components": {
+        "bb2aaa25f8a3807a": {
+          "x": 0,
+          "y": 0
+        }
+      },
+      "connections": []
+    }
+  }
+}
