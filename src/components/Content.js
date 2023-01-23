@@ -5,6 +5,7 @@ import BusinessCard from './BusinessCard';
 import ToastWithBackdrop from './ToastWithBackdrop';
 import CheckoutPage from './CheckoutPage';
 import Navbar from './DropDown';
+import SendTokens from './SendTokens';
 import { optionsComplex } from './Options';
 import Backdrop from './Backdrop';
 import { initialState, reducer } from './reducer';
@@ -37,6 +38,9 @@ export default function Content() {
       <section className='fun-facts'>
         <FunFacts />
       </section>
+        <section className='send-tokens'>
+          <SendTokens options={optionsComplex} />
+        </section> 
       <section className='DropDown'>
         <Navbar options={optionsComplex} />
       </section> 
