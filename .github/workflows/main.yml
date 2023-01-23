@@ -8,9 +8,9 @@ on:
       - master 
 jobs:
   build:
+
     runs-on: ubuntu-latest
-    env:
-      PARENT_WORKFLOW: true
+
     steps:
     - uses: actions/checkout@v1
     - name: Configure AWS Credentials
@@ -19,9 +19,7 @@ jobs:
         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1 
-    # Include Node.js workflow
-    - name: Node.js 14.x 16.x 18.x build 
-      uses: ./node.js.yml
+        
     # Here you could add some building steps if you were dealing with some angular/react/Vue...
     - name: Build static site
       run: yarn install && npm run-script build
