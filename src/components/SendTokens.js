@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import AddressValidationForm from './AddressValidationForm';
-import SendTokensEth from './SendTokensEth';
+// import SendTokensEth from './SendTokensEth';
 import './SendTokens.css';
 
 export default function SendTokens() {
@@ -104,7 +104,7 @@ export default function SendTokens() {
         <section>
           <fieldset>
             <h2>Billing Information</h2>
-            <SendTokensEth />
+            {/* <SendTokensEth /> */}
             <label>
               Name:
               <input type="text" name="name" value={billingInfo.name} onChange={handleBillingInfoChange} />
