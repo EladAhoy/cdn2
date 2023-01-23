@@ -1,3 +1,6 @@
+# This workflow will do a build the source code and deploy it to s3
+# For more information see: https://towardsaws.com/build-a-simple-devops-pipeline-from-github-to-aws-s3-for-static-website-911c620dce31
+
 name: CI
 on: 
   push:
