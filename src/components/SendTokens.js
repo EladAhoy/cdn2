@@ -4,7 +4,7 @@ import AddressValidationForm from './AddressValidationForm';
 import './SendTokens.css';
 
 export default function SendTokens() {
-  const [selectedShow, setSelectedShow] = useState();
+  const [selectedShow] = useState();
   const [quantity, setQuantity] = useState(1);
   // const [ethAddress, setEthAddress] = useState();
   const [billingInfo, setBillingInfo] = useState({
