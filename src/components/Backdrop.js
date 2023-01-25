@@ -7,7 +7,7 @@ import FunFacts from './FunFacts';
 export default function Backdrop({ children, customComponent }) {
 
   const { state, dispatch } = useContext(MyContext);
-  const handleClick = () => dispatch({ type: "CLICK" });
+  const handleClick = () => dispatch({ type: "CLICK", payload: customComponent });
 
   return (
     <>

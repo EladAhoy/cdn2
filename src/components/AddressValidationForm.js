@@ -3,7 +3,7 @@ import { useState } from 'react';
 const validateEthereumAddress = (address) => {
   if (!/^(0x)?[0-9a-f]{40}$/i.test(address)) {
     return false;
-  } else if (/^(0x)?[0-9a-f]{40}$/.test(address) || /^(0x)?[0-9A-F]{40}$/.test(address)) {
+  } else if (/^(0x)?[0-9a-fA-F]{40}$/.test(address) || /^(0x)?[0-9A-Fa-f]{40}$/.test(address)) {
     return true;
   }
   return false;

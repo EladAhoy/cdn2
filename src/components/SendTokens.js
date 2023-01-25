@@ -1,18 +1,15 @@
 import { useState } from 'react';
 import AddressValidationForm from './AddressValidationForm';
-// import SendTokensEth from './SendTokensEth';
+import ConnectToMetamask from './ConnectToMetamask';
+import SendEthPayment from './SendEthPayment';
 import './SendTokens.css';
+// import SendTokensEth from './SendTokensEth';
 
 export default function SendTokens() {
   const [selectedShow] = useState();
   const [quantity, setQuantity] = useState(1);
   // const [ethAddress, setEthAddress] = useState();
-  const [billingInfo, setBillingInfo] = useState({
-    name: '',
-    email: '',
-    address: '',
-    creditCard: ''
-  });
+
   const [finalCost, setFinalCost] = useState(0);
   const [fees, setFees] = useState(0);
 
@@ -25,14 +22,6 @@ export default function SendTokens() {
       return;
     };
     setQuantity(event.target.value);
-  };
-
-  const handleBillingInfoChange = (event) => {
-    const { name, value } = event.target;
-    setBillingInfo({
-      ...billingInfo,
-      [name]: value
-    });
   };
 
   const calculateFinalCost = () => {
@@ -55,56 +44,55 @@ export default function SendTokens() {
   return (
     <div className='checkout-container animate__animated animate__rotateInUpLeft'>
       <h1>Send Tokens</h1>
+      <section>
+        <fieldset className="send-eth">
+          <h2>Send ETH payments</h2>
+          <SendEthPayment />
+        </fieldset>
+      </section>
+
       <form className='checkout-form' onSubmit={handleSubmit}>
+
         <section>
-          <fieldset className="show-details">
-            <h2>Select Amount</h2>
+          <fieldset className="metamask-connect">
+            <h2>Connect to Metamask</h2>
+            <ConnectToMetamask />
+          </fieldset>
+        </section>
+
+        <section>
+          <fieldset className="delivery-details">
+            <h2>Check Address</h2>
+            <p>Please provide a valid ETH address.</p>
+            <AddressValidationForm />
+          </fieldset>
+
+          {/* <fieldset className="show-details">
+            <h2>Token Amount</h2>
+            <p>Select amount to transfer.</p>
             <label>
               Amount:
               <input type="number" value={quantity} onChange={handleQuantityChange} />
             </label>
-          </fieldset>
+          </fieldset> */}
 
-          <fieldset className="delivery-details">
-            <h2>Destination Address</h2>
-            <p>Please provide a valid ETH address.</p>
-            <AddressValidationForm />
-          </fieldset>
+
+
         </section>
-        <section>
-          <fieldset>
-            <h2>Newsletter Information</h2>
-            {/* <SendTokensEth /> */}
-            <label>
-              Name:
-              <input type="text" name="name" value={billingInfo.name} onChange={handleBillingInfoChange} />
-            </label>
-            <br />
-            <label>
-              Email:
-              <input type="email" name="email" value={billingInfo.email} onChange={handleBillingInfoChange} />
-            </label>
-            <br />
-            <label>
-              Address:
-              <input type="text" name="address" value={billingInfo.address} onChange={handleBillingInfoChange} />
-            </label>
-            <br />
-          </fieldset>
+        {/* <section>
           <fieldset className="payment">
             <h2>Pre Payment</h2>
             <button type="button" onClick={calculateFinalCost}>
               Calculate Fees
             </button>
           </fieldset>
-        </section>
-        <section>
+
           <fieldset className="payment">
             <h2>Total Cost: ${finalCost}</h2>
             <p>Fees: ${fees}</p>
             <button type="submit">Checkout</button>
           </fieldset>
-        </section>
+        </section> */}
       </form>
     </div>
   );

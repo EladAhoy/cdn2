@@ -31,7 +31,7 @@ export default function Content() {
     <main className="content">
       <ToastWithBackdrop show={showToast} />
       <MyContext.Provider value={{ state, dispatch }}>
-        <Backdrop customComponent='FunFacts'>
+        <Backdrop customComponent={state?.customComponent || 'FunFacts'}>
           <p>child 1</p>
           <p>child 2</p>
         </Backdrop>
