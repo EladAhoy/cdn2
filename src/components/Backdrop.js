@@ -19,7 +19,7 @@ export default function Backdrop({ children, customComponent }) {
           {customComponent === 'FunFacts' ? <FunFacts /> : ''}
           {customComponent === 'MockCheckout' ? <CheckoutPage /> : ''}
           <div className="textWrap">
-            <h1>BackDrop!</h1>
+            {/* <h1>BackDrop!</h1> */}
           </div>
         </div>)}
       </section>

@@ -14,7 +14,7 @@ export default function MailAndLinkedInButtons(props?) {
     return (
       <section className="buttons-container">
         <button className='email' onClick={goToGit}><CustomIcon type='git' /> Git</button>
-        <Backdrop customComponent='MockCheckout'></Backdrop>
+        <Backdrop customComponent='FunFacts'></Backdrop>
       </section>);
   }
 

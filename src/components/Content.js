@@ -1,13 +1,13 @@
 import { useEffect, useState, useReducer } from 'react';
 import './Content.css';
-import FunFacts from './FunFacts';
+// import FunFacts from './FunFacts';
 import BusinessCard from './BusinessCard';
 import ToastWithBackdrop from './ToastWithBackdrop';
-import CheckoutPage from './CheckoutPage';
-import Navbar from './DropDown';
+// import CheckoutPage from './CheckoutPage';
+// import Navbar from './DropDown';
 import SendTokens from './SendTokens';
 import { optionsComplex } from './Options';
-import Backdrop from './Backdrop';
+// import Backdrop from './Backdrop';
 import { initialState, reducer } from './reducer';
 import MyContext from './context';
 
@@ -31,20 +31,20 @@ export default function Content() {
     <main className="content">
       <ToastWithBackdrop show={showToast} />
       <MyContext.Provider value={{ state, dispatch }}>
-        <Backdrop customComponent={state?.customComponent || 'FunFacts'}>  
-        </Backdrop>
-      <section className='fun-facts'>
+        {/* <Backdrop customComponent={state?.customComponent || 'FunFacts'}>  
+        </Backdrop> */}
+        {/* <section className='fun-facts'>
         <FunFacts />
-      </section>
+      </section> */}
         <section className='send-tokens'>
           <SendTokens options={optionsComplex} />
         </section> 
-      <section className='DropDown'>
+        {/* <section className='DropDown'>
         <Navbar options={optionsComplex} />
-      </section> 
+      </section>
       <section className='shows'>
         <CheckoutPage />
-      </section> 
+      </section>  */}
       <section className='cards'>
         {renderCards({ types: ['profile', 'mockCheckout', 'navbar'] })}            
         </section> 
