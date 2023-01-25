@@ -4,11 +4,6 @@ import AddressValidationForm from './AddressValidationForm';
 import './SendTokens.css';
 
 export default function SendTokens() {
-  const [upcomingShows] = useState([
-    { id: 0, name: 'Please Select', cost: 0 },
-    { id: 1, name: 'Show 1', cost: 50 },
-    { id: 2, name: 'Show 2', cost: 100 },
-    { id: 3, name: 'Show 3', cost: 200 }]);
   const [selectedShow, setSelectedShow] = useState();
   const [quantity, setQuantity] = useState(1);
   // const [ethAddress, setEthAddress] = useState();
@@ -21,27 +16,11 @@ export default function SendTokens() {
   const [finalCost, setFinalCost] = useState(0);
   const [fees, setFees] = useState(0);
 
-  const handleShowSelection = (event) => {
-    const showId = +event.target.value;
-    const showObj = upcomingShows.find(el => el.id === showId);
-    setSelectedShow(showObj);
-  };
-
   const handleQuantityChange = (event) => {
     const amount = event.target.value;
     if (!amount) return;
     if (amount < 0) {
       alert('Amount needs to be larger than 0');
-      setQuantity(1);
-      return;
-    };
-    setQuantity(event.target.value);
-  };
-  const handleEthAddressChange = (event) => {
-    const Address = event.target.value;
-    if (!Address) return;
-    if (Address < 0) {
-      alert('Address needs to be larger than 0');
       setQuantity(1);
       return;
     };
@@ -80,15 +59,6 @@ export default function SendTokens() {
         <section>
           <fieldset className="show-details">
             <h2>Select Amount</h2>
-            {/* <label>
-              Select a show:
-              <select onChange={handleShowSelection}>
-                {upcomingShows.map((show) => (
-                  <option key={show.id} value={show.id}>{show.name}</option>
-                ))}
-              </select>
-            </label>
-            <br /> */}
             <label>
               Amount:
               <input type="number" value={quantity} onChange={handleQuantityChange} />
@@ -103,7 +73,7 @@ export default function SendTokens() {
         </section>
         <section>
           <fieldset>
-            <h2>Billing Information</h2>
+            <h2>Newsletter Information</h2>
             {/* <SendTokensEth /> */}
             <label>
               Name:
@@ -120,15 +90,11 @@ export default function SendTokens() {
               <input type="text" name="address" value={billingInfo.address} onChange={handleBillingInfoChange} />
             </label>
             <br />
-            <label>
-              Credit Card:
-              <input type="text" name="creditCard" value={billingInfo.creditCard} onChange={handleBillingInfoChange} />
-            </label>
           </fieldset>
           <fieldset className="payment">
             <h2>Pre Payment</h2>
             <button type="button" onClick={calculateFinalCost}>
-              Calculate Cost
+              Calculate Fees
             </button>
           </fieldset>
         </section>
