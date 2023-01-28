@@ -3,7 +3,8 @@ import ProfilePic from './ProfilePic';
 import MailAndLinkedInButtons from './MailAndLinkedInButtons';
 import 'animate.css';
 
-function MockCheckoutCard() {
+function MockCheckoutCard(props?) {
+  const { type } = props;
   return (
     <article className="business-card-container-left animate__animated animate__fadeInRight">
 
@@ -16,7 +17,7 @@ function MockCheckoutCard() {
       <section className="buttons-and-details">
         <h1 className='name'>Mock Checkout </h1>
         <h4 className='role'>Sample Project</h4>
-        <MailAndLinkedInButtons style={{ opacity: 1 }} gitRef={{ gitName: 'mockCheckout' }} />
+        <MailAndLinkedInButtons style={{ opacity: 1 }} gitRef={{ gitName: 'mockCheckout' }} type={type} />
       </section>
 
       <section className="about">
@@ -26,7 +27,8 @@ function MockCheckoutCard() {
     </article>);
 }
 
-function DropdownNavbarCard() {
+function DropdownNavbarCard(props?) {
+  const { type } = props;
   return (
     <article className="business-card-container-left animate__animated animate__fadeInRight">
 
@@ -39,7 +41,7 @@ function DropdownNavbarCard() {
       <section className="buttons-and-details">
         <h1 className='name'>Dropdown Menu</h1>
         <h4 className='role'>Sample Project</h4>
-        <MailAndLinkedInButtons style={{ opacity: 1 }} gitRef={{ gitName: 'mockCheckout' }} />
+        <MailAndLinkedInButtons style={{ opacity: 1 }} gitRef={{ gitName: 'mockCheckout' }} type={type} />
       </section>
 
       <section className="about">
@@ -53,8 +55,8 @@ function DropdownNavbarCard() {
 export default function BusinessCard(props?) {
   if (props) {
     const { type } = props;
-    if (type === 'mockCheckout') return <MockCheckoutCard />;
-    if (type === 'navbar') return <DropdownNavbarCard />;
+    if (type === 'mockCheckout') return <MockCheckoutCard type={type} />;
+    if (type === 'navbar') return <DropdownNavbarCard type={type} />;
   }
   return (
     <article className="business-card-container animate__animated animate__fadeInLeft">

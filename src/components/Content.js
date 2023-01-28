@@ -7,7 +7,7 @@ import ToastWithBackdrop from './ToastWithBackdrop';
 // import Navbar from './DropDown';
 import SendTokens from './SendTokens';
 import { optionsComplex } from './Options';
-// import Backdrop from './Backdrop';
+import Backdrop from './Backdrop';
 import { initialState, reducer } from './reducer';
 import MyContext from './context';
 
@@ -31,8 +31,8 @@ export default function Content() {
     <main className="content">
       <ToastWithBackdrop show={showToast} />
       <MyContext.Provider value={{ state, dispatch }}>
-        {/* <Backdrop customComponent={state?.customComponent || 'FunFacts'}>  
-        </Backdrop> */}
+        <Backdrop customComponent={state?.customComponent || 'funFacts'}>
+        </Backdrop>
         {/* <section className='fun-facts'>
         <FunFacts />
       </section> */}

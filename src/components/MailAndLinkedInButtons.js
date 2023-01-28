@@ -10,16 +10,18 @@ export default function MailAndLinkedInButtons(props?) {
     <section className="buttons-container">
     </section>);
 
-  if (props?.gitRef) {
+  if (props?.gitRef && props?.type) {
+    const { type } = props;
+
     return (
       <section className="buttons-container">
         <button className='email' onClick={goToGit}><CustomIcon type='git' /> Git</button>
-        <Backdrop customComponent='FunFacts'></Backdrop>
+        <Backdrop customComponent={type}></Backdrop>
       </section>);
   }
 
   function goToGit() {
-    const link = 'https://github.com/DontWorryYouCanMerge/cdn2';
+    const link = 'https://github.com/ShesdevSoftwareDevelopment/cdn2';
     window.location.href = link;
   };
   const goToLinkedin = () => {

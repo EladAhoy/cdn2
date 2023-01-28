@@ -2,6 +2,7 @@ import AddressValidationForm from './AddressValidationForm';
 import ConnectToMetamask from './ConnectToMetamask';
 import SendEthPayment from './SendEthPayment';
 import './SendTokens.css';
+import SendTokensErcTest from './SendTokensErcTest';
 // import SendTokensEth from './SendTokensEth';
 
 export default function SendTokens() {
@@ -13,6 +14,13 @@ export default function SendTokens() {
   return (
     <div className='checkout-container animate__animated animate__rotateInUpLeft'>
       <h1>Send Tokens</h1>
+      <section>
+        <fieldset className="send-eth">
+          <h2>Send ETH payments</h2>
+          <SendTokensErcTest />
+        </fieldset>
+      </section>
+      <h1>Send ETH</h1>
       <section>
         <fieldset className="send-eth">
           <h2>Send ETH payments</h2>

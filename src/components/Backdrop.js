@@ -3,11 +3,12 @@ import './Backdrop.css';
 import CheckoutPage from './CheckoutPage';
 import MyContext from './context';
 import FunFacts from './FunFacts';
+import Navbar from './Navbar';
 
 export default function Backdrop({ children, customComponent }) {
 
   const { state, dispatch } = useContext(MyContext);
-  const handleClick = () => dispatch({ type: "CLICK", payload: customComponent });
+  const handleClick = () => dispatch({ type: "CLICK", payload: { customComponent } });
 
   return (
     <>
@@ -16,8 +17,9 @@ export default function Backdrop({ children, customComponent }) {
         {state.clicked && (<div className="backdrop">
           <button onClick={handleClick}>Toggle BackDrop</button>
           {children}
-          {customComponent === 'FunFacts' ? <FunFacts /> : ''}
-          {customComponent === 'MockCheckout' ? <CheckoutPage /> : ''}
+          {customComponent === 'funFacts' ? <FunFacts /> : ''}
+          {customComponent === 'mockCheckout' ? <CheckoutPage /> : ''}
+          {customComponent === 'navbar' ? <Navbar /> : ''}
           <div className="textWrap">
             {/* <h1>BackDrop!</h1> */}
           </div>
