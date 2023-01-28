@@ -11,7 +11,9 @@ export default function ConnectToMetamask() {
 
   const { ethereum } = window;
 
-  const provider = new ethers.providers.Web3Provider(window.ethereum);
+  // const provider = new ethers.providers.Web3Provider(window.ethereum);
+  const provider = ((window.ethereum != null) ? new ethers.providers.Web3Provider(window.ethereum) : ethers.providers.getDefaultProvider());
+
 
   useEffect(() => {
     const { ethereum } = window;
