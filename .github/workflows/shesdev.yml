@@ -1,0 +1,29 @@
+# This workflow will do a build the source code and deploy it to s3
+# For more information see: https://towardsaws.com/build-a-simple-devops-pipeline-from-github-to-aws-s3-for-static-website-911c620dce31
+
+name: CI
+on: 
+  push:
+    branches:
+      - shesdev 
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: us-east-1 
+        
+    # Here you could add some building steps if you were dealing with some angular/react/Vue...
+    - name: Build static site
+      run: yarn install && npm run-script build
+    
+    - name: Deploy static site to S3 bucket
+      run: aws s3 sync ./build/ s3://shesdev.com --delete
+      # --delete flag will remove any file in the s3 that are not on the "thefoldertodeploy" folder
