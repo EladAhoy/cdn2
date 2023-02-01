@@ -6,7 +6,7 @@ export default function Navbar() {
     <nav className="navbar">
       <Logo />
       <div className='navbar__inner-text'>
-        <h1>Shesdev</h1>
+        <h1>Shesdev Software Development</h1>
         {/* <ul>
           <li>Pricing</li>
           <li>About</li>
