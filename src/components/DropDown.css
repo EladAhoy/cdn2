@@ -3,6 +3,7 @@ nav.dropdown-navbar {
   flex-direction: column;
 }
 
+
 nav.dropdown-navbar ul {
   display: flex;
   list-style: none;
@@ -66,4 +67,14 @@ nav.dropdown-navbar ul.nested-dropdown-list {
 nav.dropdown-navbar ul.nested-dropdown-list li {
   display: block;
   position: relative;
+}
+
+
+@media only screen and (max-width: 767px) {
+nav.dropdown-navbar {
+  max-width: 96vw;
+}
+nav.dropdown-navbar > h1{
+  text-align: center;
+}
 }

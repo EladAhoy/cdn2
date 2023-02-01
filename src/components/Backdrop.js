@@ -13,7 +13,7 @@ export default function Backdrop({ children, customComponent, noButton }) {
   const { state, dispatch } = useContext(MyContext);
   const handleClick = () => dispatch({ type: "CLICK", payload: { customComponent } });
   const renderButton = () => {
-    return noButton ? '' : <button onClick={handleClick}>BackDrop</button>;
+    return noButton ? '' : <button onClick={handleClick}>Open</button>;
   }
 
   return (
@@ -21,7 +21,7 @@ export default function Backdrop({ children, customComponent, noButton }) {
       <section className="backdrop-container">
         {renderButton()}
         {state.clicked && (<div className="backdrop">
-          <button onClick={handleClick}>BackDrop</button>
+          <button onClick={handleClick}>Close</button>
           {children}
           {customComponent === 'funFacts' ? <FunFacts /> : ''}
           {customComponent === 'mockCheckout' ? <CheckoutPage /> : ''}
