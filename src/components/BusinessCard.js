@@ -52,11 +52,37 @@ function DropDownNavbarCard(props?) {
     </article>);
 }
 
+function SendTokensCard(props?) {
+  const { type } = props;
+  return (
+    <article className="business-card-container-left animate__animated animate__fadeInRight">
+
+      <section className="profile_pic">
+        <div className="business-card__profile-pic-container">
+          <ProfilePic src='menu-key' />
+        </div>
+      </section>
+
+      <section className="buttons-and-details">
+        <h1 className='name'>Send Tokens</h1>
+        <h4 className='role'>Sample Project</h4>
+        <MailAndLinkedInButtons style={{ opacity: 1 }} gitRef={{ gitName: 'mockCheckout' }} type={type} />
+      </section>
+
+      <section className="about">
+        <h3 className='about__header'>About</h3>
+        <p className='about__text'>The task is to create an ETH payment gateway</p>
+      </section>
+    </article>);
+}
+
 export default function BusinessCard(props?) {
   if (props) {
     const { type } = props;
     if (type === 'mockCheckout') return <MockCheckoutCard type={type} />;
     if (type === 'dropDownNavbar') return <DropDownNavbarCard type={type} />;
+    if (type === 'sendTokens') return <SendTokensCard type={type} />;
+
   }
   return (
     <article className="business-card-container animate__animated animate__fadeInLeft">

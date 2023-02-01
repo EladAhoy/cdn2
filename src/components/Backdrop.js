@@ -5,6 +5,7 @@ import MyContext from './context';
 import FunFacts from './FunFacts';
 import DropDownNavbar from './DropDown';
 import { optionsComplex } from './Options';
+import SendTokens from './SendTokens';
 
 
 export default function Backdrop({ children, customComponent }) {
@@ -22,9 +23,8 @@ export default function Backdrop({ children, customComponent }) {
           {customComponent === 'funFacts' ? <FunFacts /> : ''}
           {customComponent === 'mockCheckout' ? <CheckoutPage /> : ''}
           {customComponent === 'dropDownNavbar' ? <DropDownNavbar options={optionsComplex} /> : ''}
-          <div className="textWrap">
-            {/* <h1>BackDrop!</h1> */}
-          </div>
+          {customComponent === 'sendTokens' ? <SendTokens /> : ''}
+          <div className="textWrap"></div>
         </div>)}
       </section>
     </>);
