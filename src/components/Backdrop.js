@@ -3,7 +3,9 @@ import './Backdrop.css';
 import CheckoutPage from './CheckoutPage';
 import MyContext from './context';
 import FunFacts from './FunFacts';
-import Navbar from './Navbar';
+import DropDownNavbar from './DropDown';
+import { optionsComplex } from './Options';
+
 
 export default function Backdrop({ children, customComponent }) {
 
@@ -13,13 +15,13 @@ export default function Backdrop({ children, customComponent }) {
   return (
     <>
       <section className="backdrop-container">
-        <button onClick={handleClick}>Toggle BackDrop</button>
+        <button onClick={handleClick}>BackDrop</button>
         {state.clicked && (<div className="backdrop">
-          <button onClick={handleClick}>Toggle BackDrop</button>
+          <button onClick={handleClick}>BackDrop</button>
           {children}
           {customComponent === 'funFacts' ? <FunFacts /> : ''}
           {customComponent === 'mockCheckout' ? <CheckoutPage /> : ''}
-          {customComponent === 'navbar' ? <Navbar /> : ''}
+          {customComponent === 'dropDownNavbar' ? <DropDownNavbar options={optionsComplex} /> : ''}
           <div className="textWrap">
             {/* <h1>BackDrop!</h1> */}
           </div>

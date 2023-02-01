@@ -4,7 +4,7 @@ import './Content.css';
 import BusinessCard from './BusinessCard';
 import ToastWithBackdrop from './ToastWithBackdrop';
 // import CheckoutPage from './CheckoutPage';
-// import Navbar from './DropDown';
+import DropDownNavbar from './DropDown';
 import SendTokens from './SendTokens';
 import { optionsComplex } from './Options';
 import Backdrop from './Backdrop';
@@ -39,14 +39,14 @@ export default function Content() {
         <section className='send-tokens'>
           <SendTokens options={optionsComplex} />
         </section> 
-        {/* <section className='DropDown'>
-        <Navbar options={optionsComplex} />
+        <section className='DropDown'>
+          <DropDownNavbar options={optionsComplex} />
       </section>
-      <section className='shows'>
+        {/* <section className='shows'>
         <CheckoutPage />
-      </section>  */}
+      </section> */}
       <section className='cards'>
-        {renderCards({ types: ['profile', 'mockCheckout', 'navbar'] })}            
+          {renderCards({ types: ['profile', 'mockCheckout', 'dropDownNavbar'] })}            
         </section> 
       </MyContext.Provider>  
     </main>);

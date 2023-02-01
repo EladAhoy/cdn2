@@ -27,7 +27,7 @@ function MockCheckoutCard(props?) {
     </article>);
 }
 
-function DropdownNavbarCard(props?) {
+function DropDownNavbarCard(props?) {
   const { type } = props;
   return (
     <article className="business-card-container-left animate__animated animate__fadeInRight">
@@ -56,7 +56,7 @@ export default function BusinessCard(props?) {
   if (props) {
     const { type } = props;
     if (type === 'mockCheckout') return <MockCheckoutCard type={type} />;
-    if (type === 'navbar') return <DropdownNavbarCard type={type} />;
+    if (type === 'dropDownNavbar') return <DropDownNavbarCard type={type} />;
   }
   return (
     <article className="business-card-container animate__animated animate__fadeInLeft">
