@@ -103,6 +103,10 @@ div.toast>div.textWrap h1 {
   font-size: 1.8rem
 }
 
+.backdrop > button{
+  margin-block: 1rem;  
+}
+
 .backdrop > button,
 .backdrop-container > button {
   min-width: 9rem;
