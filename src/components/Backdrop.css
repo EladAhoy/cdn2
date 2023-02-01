@@ -207,6 +207,4 @@ div.backdrop {
   position: absolute;
   padding: 0.5rem;
   overflow-x: hidden;
-  width:100vw;
-  height: 100vh;
 }}
