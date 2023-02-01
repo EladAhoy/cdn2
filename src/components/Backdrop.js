@@ -8,15 +8,18 @@ import { optionsComplex } from './Options';
 import SendTokens from './SendTokens';
 
 
-export default function Backdrop({ children, customComponent }) {
+export default function Backdrop({ children, customComponent, noButton }) {
 
   const { state, dispatch } = useContext(MyContext);
   const handleClick = () => dispatch({ type: "CLICK", payload: { customComponent } });
+  const renderButton = () => {
+    return noButton ? '' : <button onClick={handleClick}>BackDrop</button>;
+  }
 
   return (
     <>
       <section className="backdrop-container">
-        <button onClick={handleClick}>BackDrop</button>
+        {renderButton()}
         {state.clicked && (<div className="backdrop">
           <button onClick={handleClick}>BackDrop</button>
           {children}

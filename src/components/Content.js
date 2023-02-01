@@ -26,7 +26,7 @@ export default function Content() {
     <main className="content">
       <ToastWithBackdrop show={showToast} />
       <MyContext.Provider value={{ state, dispatch }}>
-        <Backdrop customComponent={state?.customComponent || 'funFacts'}></Backdrop>
+        <Backdrop customComponent={state?.customComponent || 'funFacts'} noButton={true}></Backdrop>
         <section className='cards'>{renderCards({ types: ['profile', 'mockCheckout', 'dropDownNavbar', 'sendTokens'] })}</section> 
       </MyContext.Provider>  
     </main>);

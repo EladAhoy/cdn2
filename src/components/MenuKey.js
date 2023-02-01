@@ -6,6 +6,7 @@ export default function MenuKey() {
       xmlns="http://www.w3.org/2000/svg"
       version="1"
       viewBox="0 0 20.761 19.033"
+      className='white-bg'
     >
       <g transform="translate(-20.504 -28.131)">
         <path

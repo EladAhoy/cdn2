@@ -59,12 +59,12 @@ function SendTokensCard(props?) {
 
       <section className="profile_pic">
         <div className="business-card__profile-pic-container">
-          <ProfilePic src='menu-key' />
+          <ProfilePic src='send-eth' />
         </div>
       </section>
 
       <section className="buttons-and-details">
-        <h1 className='name'>Send Tokens</h1>
+        <h1 className='name'>Send ETH</h1>
         <h4 className='role'>Sample Project</h4>
         <MailAndLinkedInButtons style={{ opacity: 1 }} gitRef={{ gitName: 'mockCheckout' }} type={type} />
       </section>
