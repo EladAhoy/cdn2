@@ -29,6 +29,30 @@
         "uuid": "bb2aaa25f8a3807a",
         "qName": "cloudfairy/public-website",
         "annotations": {}
+      },
+      {
+        "type": "component",
+        "properties": [
+          {
+            "name": "bucketName",
+            "defaultValue": "my-website",
+            "value": "fairy-portfolio"
+          },
+          {
+            "name": "indexPage",
+            "defaultValue": "/index.html",
+            "value": "/index.html"
+          },
+          {
+            "name": "errorPage",
+            "defaultValue": "/error.html",
+            "value": "/error.html"
+          }
+        ],
+        "localName": "fairy-portfolio",
+        "uuid": "d9e9b03d385ee1dc",
+        "qName": "cloudfairy/public-website",
+        "annotations": {}
       }
     ],
     "connectors": [],
@@ -40,6 +64,10 @@
       "designer": {},
       "components": {
         "bb2aaa25f8a3807a": {
+          "x": 0,
+          "y": 0
+        },
+        "d9e9b03d385ee1dc": {
           "x": 0,
           "y": 0
         }

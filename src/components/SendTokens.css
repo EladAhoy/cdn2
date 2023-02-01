@@ -123,3 +123,14 @@ div.center-content {
   gap:0.5rem;
   text-align: center;
 }
+
+@media only screen and (max-width: 767px) {
+.checkout-form {
+  flex-direction: column;
+  max-width: 96vw;
+}
+
+.checkout-container {
+  background-color: black;
+}
+}

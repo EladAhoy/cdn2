@@ -197,3 +197,10 @@ div.toast.show {
     opacity: 0;
   }
 }
+
+@media only screen and (max-width: 767px) {
+div.backdrop {
+  position: absolute;
+  padding: 0.5rem;
+  /* margin-block-end:0.5rem */
+}}
