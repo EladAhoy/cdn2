@@ -5,7 +5,7 @@
 }
 
 .profile-pic-container {
-  min-height: 18rem;
+  min-height: 18rem; 
   display: flex;
   place-items: center;
   place-content: center;
@@ -19,4 +19,15 @@
 .profile-pic-container svg.white-bg {
   border-radius: 1rem;
   background-color: white;
+}
+
+@media only screen and (max-width: 767px) {
+.profile-pic-container__profile-pic {
+   width: 100%;
+}
+
+.profile-pic-container {
+  min-height: unset 
+}
+
 }
