@@ -30,9 +30,9 @@ function DropdownMenu({ options }) {
   );
 }
 
-function Navbar({ options }) {
+export default function DropDownNavbar({ options }) {
   return (
-    <nav className='dropdwon-navbar'>
+    <nav className='dropdown-navbar'>
       <h1>Dropdown Navbar</h1>
       <ul>
         {options.map((option, index) => (
@@ -49,4 +49,4 @@ function Navbar({ options }) {
   );
 }
 
-export default Navbar;
+

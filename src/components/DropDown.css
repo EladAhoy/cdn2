@@ -1,25 +1,26 @@
-nav.dropdwon-navbar {
+nav.dropdown-navbar {
   display: flex;
   flex-direction: column;
 }
 
-nav.dropdwon-navbar ul {
+
+nav.dropdown-navbar ul {
   display: flex;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
-nav.dropdwon-navbar ul li {
+nav.dropdown-navbar ul li {
   width: 100px;
 }
 
-nav.dropdwon-navbar ul li button:hover {
+nav.dropdown-navbar ul li button:hover {
   background: #f6f6f6;
   color: #333
 }
 
-nav.dropdwon-navbar ul li button {
+nav.dropdown-navbar ul li button {
   display: block;
   text-decoration: none;
   font-weight: 700;
@@ -33,7 +34,7 @@ nav.dropdwon-navbar ul li button {
   width: 100%;
 }
 
-nav.dropdwon-navbar ul li {
+nav.dropdown-navbar ul li {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -43,14 +44,14 @@ nav.dropdwon-navbar ul li {
   position: relative;
 }
 
-nav.dropdwon-navbar>ul>li>ul.nested-dropdown-list {
+nav.dropdown-navbar>ul>li>ul.nested-dropdown-list {
   position: relative;
   left: unset;
 
 }
 
 
-nav.dropdwon-navbar ul.nested-dropdown-list {
+nav.dropdown-navbar ul.nested-dropdown-list {
   display: flex;
   flex-direction: column;
   list-style: none;
@@ -63,7 +64,17 @@ nav.dropdwon-navbar ul.nested-dropdown-list {
   z-index: 5;
 }
 
-nav.dropdwon-navbar ul.nested-dropdown-list li {
+nav.dropdown-navbar ul.nested-dropdown-list li {
   display: block;
   position: relative;
+}
+
+
+@media only screen and (max-width: 767px) {
+nav.dropdown-navbar {
+  max-width: 96vw;
+}
+nav.dropdown-navbar > h1{
+  text-align: center;
+}
 }

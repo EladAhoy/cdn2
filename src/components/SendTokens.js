@@ -13,11 +13,9 @@ export default function SendTokens() {
   return (
     <div className='checkout-container animate__animated animate__rotateInUpLeft'>
       <h1>Send ETH</h1>
-      <section>
-        <fieldset className="send-eth">
+      <section className="send-eth">
           <h2>Send ETH payments</h2>
-          <SendEthPayment />
-        </fieldset>
+        <SendEthPayment />
       </section>
 
       <form className='checkout-form' onSubmit={handleSubmit}>

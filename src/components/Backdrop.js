@@ -3,26 +3,31 @@ import './Backdrop.css';
 import CheckoutPage from './CheckoutPage';
 import MyContext from './context';
 import FunFacts from './FunFacts';
-import Navbar from './Navbar';
+import DropDownNavbar from './DropDown';
+import { optionsComplex } from './Options';
+import SendTokens from './SendTokens';
 
-export default function Backdrop({ children, customComponent }) {
+
+export default function Backdrop({ children, customComponent, noButton }) {
 
   const { state, dispatch } = useContext(MyContext);
   const handleClick = () => dispatch({ type: "CLICK", payload: { customComponent } });
+  const renderButton = () => {
+    return noButton ? '' : <button onClick={handleClick}>Open</button>;
+  }
 
   return (
     <>
       <section className="backdrop-container">
-        <button onClick={handleClick}>Toggle BackDrop</button>
+        {renderButton()}
         {state.clicked && (<div className="backdrop">
-          <button onClick={handleClick}>Toggle BackDrop</button>
+          <button onClick={handleClick}>Close</button>
           {children}
           {customComponent === 'funFacts' ? <FunFacts /> : ''}
           {customComponent === 'mockCheckout' ? <CheckoutPage /> : ''}
-          {customComponent === 'navbar' ? <Navbar /> : ''}
-          <div className="textWrap">
-            {/* <h1>BackDrop!</h1> */}
-          </div>
+          {customComponent === 'dropDownNavbar' ? <DropDownNavbar options={optionsComplex} /> : ''}
+          {customComponent === 'sendTokens' ? <SendTokens /> : ''}
+          <div className="textWrap"></div>
         </div>)}
       </section>
     </>);
