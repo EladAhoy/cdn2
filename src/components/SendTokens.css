@@ -8,7 +8,6 @@ input {
 .checkout-container {
   display: flex;
   gap: 1rem;
-  flex-direction: column;
 }
 
 .checkout-form {
@@ -84,6 +83,16 @@ input[type="number"]::-moz-inner-spin-button {
   -moz-appearance: textfield;
 }
 
+section.send-eth {
+  text-align: center;
+  border:2px grey solid;
+  padding: 2rem;;
+}
+
+section.send-eth h2 {
+  margin-block-start: 0;
+}
+
 fieldset {
   padding: 2rem;
 }
@@ -122,4 +131,26 @@ div.center-content {
   flex-direction: column;
   gap:0.5rem;
   text-align: center;
+}
+
+@media only screen and (max-width: 767px) {
+.checkout-form {
+  flex-direction: column;
+  margin-block-end: 2rem;
+  max-width: 96vw;
+}
+
+.checkout-container {
+  flex-direction: column;
+  background-color: black;  
+  max-width: 96vw;
+}
+.checkout-container > h1{
+  text-align: center;
+  margin-block-end:0;
+}
+
+section.send-eth {
+  max-width: 96vw;  
+}
 }
