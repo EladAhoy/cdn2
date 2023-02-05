@@ -18,8 +18,8 @@ export class SchemaService {
       name: 'Mock Checkout',
       role: 'Sample Project',
       gitName: 'mockCheckout',
-      aboutHeader: 'About',
-      aboutText: "The task is to create a mock checkout page for buying tickets to a show. Users should have the ability to select a show from a list of upcoming shows, select the quantity, enter their basic billing information (you don't need to actually accept real credit card data, just simulate how this part should work), and see their final cost with fees before checking out.It should look like TicketMaster's website checkout page as reference).",
+      aboutHeader: 'Task',
+      aboutText: "Create a mock checkout page for buying tickets to a show. Users should have the ability to select a show from a list of upcoming shows, select the quantity, enter their basic billing information (you don't need to actually accept real credit card data, just simulate how this part should work), and see their final cost with fees before checking out.",
       classNameList: 'business-card-container-left animate__animated animate__fadeInRight'
 
     },
@@ -30,8 +30,8 @@ export class SchemaService {
       name: 'Dropdown Menu',
       role: 'Sample Project',
       gitName: 'mockCheckout',
-      aboutHeader: 'About',
-      aboutText: "The task is to create an dropdown menu that gets a JSON object as input, and uses recursion to include nested dropdwon menus as needed.No need to solve overlapping issues.",
+      aboutHeader: 'Task',
+      aboutText: "Create an dropdown menu that gets a JSON object as input, and uses recursion to include nested dropdown menus as needed. No need to handle overlapping issues.",
       classNameList: 'business-card-container-left animate__animated animate__fadeInRight'
     },
     {
@@ -40,9 +40,9 @@ export class SchemaService {
       picSrc: 'send-eth',
       name: 'Send ETH',
       role: 'Sample Project',
-      gitName: 'mockCheckout',
-      aboutHeader: 'About',
-      aboutText: "The task is to create an ETH payment gateway",
+      gitName: 'sendTokens',
+      aboutHeader: 'Task',
+      aboutText: "Create an ETH payment gateway. Include connection to MetaMask and a tool to check if an ETH address is valid.",
       classNameList: 'business-card-container-left animate__animated animate__fadeInRight'
     },
   ];
