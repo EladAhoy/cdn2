@@ -10,7 +10,7 @@ export default function MailAndLinkedInButtons(props?) {
     <section className="buttons-container">
     </section>);
 
-  if (props?.gitRef && props?.type) {
+  if (props?.gitRef && props?.type && props?.type !== 'profile') {
     const { type } = props;
 
     return (

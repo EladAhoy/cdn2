@@ -16,9 +16,15 @@ export default function Backdrop({ children, customComponent, noButton }) {
     return noButton ? '' : <button onClick={handleClick}>Open</button>;
   }
 
+  const renderClasses = () => {
+    let response;
+    response = state.clicked ? 'backdrop-container open' : 'backdrop-container';
+    return response;
+  }
+
   return (
     <>
-      <section className="backdrop-container">
+      <section className={renderClasses()}>
         {renderButton()}
         {state.clicked && (<div className="backdrop">
           <button onClick={handleClick}>Close</button>
