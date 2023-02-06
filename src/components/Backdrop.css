@@ -204,7 +204,15 @@ div.toast.show {
 
 @media only screen and (max-width: 767px) {
 div.backdrop {
-  position: absolute;
+  /* position: absolute; */
   padding: 0.5rem;
   overflow-x: hidden;
+}
+
+section.backdrop-container.open{
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    height: 100vh;
+    width: 100vw;
 }}

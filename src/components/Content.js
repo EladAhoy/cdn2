@@ -5,10 +5,13 @@ import ToastWithBackdrop from './ToastWithBackdrop';
 import Backdrop from './Backdrop';
 import { initialState, reducer } from './reducer';
 import MyContext from './context';
+import { SchemaService } from '../services/schemaService';
 
 function renderCards({ types, value }) {
   if (!types) return;
-  const cards = types?.map((type, index) => <BusinessCard key={index} type={type} />);
+  const cardsSchema = SchemaService.getCardsSchema;
+  // console.log(cardsSchema);
+  const cards = cardsSchema?.map((item, index) => <BusinessCard key={index} item={item} />);
   return (cards);
 }
 

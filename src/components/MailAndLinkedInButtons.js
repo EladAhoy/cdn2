@@ -10,7 +10,7 @@ export default function MailAndLinkedInButtons(props?) {
     <section className="buttons-container">
     </section>);
 
-  if (props?.gitRef && props?.type) {
+  if (props?.gitRef && props?.type && props?.type !== 'profile') {
     const { type } = props;
 
     return (
@@ -21,7 +21,20 @@ export default function MailAndLinkedInButtons(props?) {
   }
 
   function goToGit() {
-    const link = 'https://github.com/ShesdevSoftwareDevelopment/cdn2';
+    const { gitRef } = props;
+    const { gitName } = gitRef;
+    let link;
+    const srcLink = 'https://github.com/ShesdevSoftwareDevelopment/cdn2';
+    switch (gitName) {
+      case 'mockCheckout':
+        link = srcLink + '/blob/shesdev/src/components/CheckoutPage.js';
+        break;
+      case 'sendTokens':
+        link = srcLink + '/blob/shesdev/src/components/SendTokens.js';
+        break;
+      default:
+        link = srcLink;
+    }
     window.location.href = link;
   };
   const goToLinkedin = () => {
