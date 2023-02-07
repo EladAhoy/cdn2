@@ -8,6 +8,7 @@ input {
 .checkout-container {
   display: flex;
   gap: 1rem;
+  flex-direction: column;
 }
 
 .checkout-form {
@@ -23,6 +24,11 @@ input {
 
 .checkout-form button {
   width: fit-content
+}
+
+.checkout-container__div{
+    display: flex;
+    gap: inherit;
 }
 
 form select {
@@ -152,5 +158,9 @@ div.center-content {
 
 section.send-eth {
   max-width: 96vw;  
+}
+
+.checkout-container__div{
+ flex-direction: column;
 }
 }

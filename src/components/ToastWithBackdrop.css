@@ -191,6 +191,7 @@ div.toast>div.textWrap h1 {
 div.toast {
   top: 1rem;
   right: 1rem;
+  left: 1rem;
 }
 
 div.toast.show {
