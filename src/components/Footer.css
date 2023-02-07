@@ -13,3 +13,16 @@
 .footer p {
   font-size: 0.8rem;
 }
+
+.footer img.logo-container__App-logo{
+width:1.5rem;}
+
+@media only screen and (max-width: 767px) {
+.footer img.logo-container__App-logo{
+margin:0.5rem;
+}
+
+.footer{
+  justify-content: center;
+}
+}

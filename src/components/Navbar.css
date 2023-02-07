@@ -19,5 +19,19 @@
 
 .navbar h1 {
   color: #61DAFB;
-  margin:0
+  margin: 0;
+  font-size: 2rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .navbar h1 {
+    color: #61DAFB;
+    margin: 0;
+    width: min-content;
+    font-size: 1rem;
+  }
+
+  .navbar {
+    justify-content: center;
+  }
 }

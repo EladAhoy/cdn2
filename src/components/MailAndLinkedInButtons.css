@@ -20,6 +20,7 @@ section.buttons-container button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  color: black;
 }
 
 section.buttons-container button.linked-in {
