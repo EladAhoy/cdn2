@@ -21,7 +21,6 @@ export default function Content() {
 
   const [showToast, setshowToast] = useState(true);
   const [gifsData, setGifsData] = useState(null);
-  const [firstRender, setFirstRender] = useState(true);
 
   useEffect(() => {
     const timer = setTimeout(() => setshowToast(false), 5800);
@@ -35,10 +34,10 @@ export default function Content() {
       const gifs = await GifService.getGifs();
       alert('!');
       setGifsData({ gifs });
-      setFirstRender(false);
     }
-    if (!gifsData && firstRender) fetchGifs();
-
+    if (!gifsData) {
+      fetchGifs();
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
