@@ -13,6 +13,7 @@ export default function SendTokens() {
   return (
     <div className='checkout-container animate__animated animate__rotateInUpLeft'>
       <h1>Send ETH</h1>
+      <div className="checkout-container__div">
       <section className="send-eth">
           <h2>Send ETH payments</h2>
         <SendEthPayment />
@@ -34,7 +35,8 @@ export default function SendTokens() {
             <AddressValidationForm />
           </fieldset>
         </section>
-      </form>
+        </form>
+      </div>
     </div>
   );
 };
