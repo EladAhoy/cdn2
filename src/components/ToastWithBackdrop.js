@@ -12,6 +12,14 @@ export default function ToastWithBackdrop(props) {
       <div className="toast">
         <div className="textWrap">
           <h1>Welcome!</h1>
+          <ul className='backdrop__ul'>
+            <li>Each card describes a project.</li>
+            <li>My contact details are in the first one.</li>
+            <li>Project pics are randomly fetched from Giphy.com.</li>
+            <li>Feel free to hover over them.</li>
+            <li>Clicking on "Open" loads a demo.</li>
+            <li>Clicking on "Git" brings you to the source code.</li>
+            <br />Enjoy :)</ul>
         </div>
       </div>
     </article>);
