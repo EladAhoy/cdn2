@@ -11,7 +11,6 @@ import { GifService } from '../services/gifService';
 function renderCards({ gifsData }) {
   if (!gifsData || !gifsData?.gifs) return;
   const { gifs: { data } } = gifsData;
-  console.log({ data })
   const cardsSchema = SchemaService.getCardsSchema;
   const cards = cardsSchema?.map((item, index) => <BusinessCard key={index} item={item} gifData={data[index]} />);
   return (cards);
@@ -23,7 +22,7 @@ export default function Content() {
   const [gifsData, setGifsData] = useState(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setshowToast(false), 5800);
+    const timer = setTimeout(() => setshowToast(false), 8800);
     return () => clearTimeout(timer);
   }, []);
 

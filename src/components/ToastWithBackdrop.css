@@ -47,7 +47,6 @@ div.toast {
   font-weight: 500;
 }
 
-
 div.toast.show {
   display: flex;
   max-width: 56.5rem;
@@ -83,6 +82,14 @@ div.toast.show {
   text-align: left;
 }
 
+div.toast>div.textWrap {
+text-align: left;
+}
+
+div.toast .backdrop__ul {
+  font-size: 1.5rem
+}
+
 div.toast>div.textWrap h1 {
   text-align: left;
   margin: 0 1rem;
@@ -99,8 +106,8 @@ div.toast {
 
 div.toast.show {
   visibility: visible;
-  -webkit-animation: 0.25s staytransparent, 0.5s ease-out 0.25s fadein, 0.5s ease-in 5s fadeout, 1s 5.25s staytransparent;
-  animation: 0.25s staytransparent, 0.5s ease-out 0.25s fadein, 0.5s ease-in 5s fadeout, 1s 5.5s staytransparent;
+  -webkit-animation: 0.25s staytransparent, 0.5s ease-out 0.25s fadein, 0.5s ease-in 8s fadeout, 1s 8.25s staytransparent;
+  animation: 0.25s staytransparent, 0.5s ease-out 0.25s fadein, 0.5s ease-in 8s fadeout, 1s 8.5s staytransparent;
 }
 
 
