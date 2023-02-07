@@ -1,7 +1,6 @@
 .logo-container__App-logo {
-  height: 3rem;
   width: 3rem;
-  margin:1rem 0.5rem;
+  margin: 1rem 0.5rem;
   pointer-events: none;
 }
 
