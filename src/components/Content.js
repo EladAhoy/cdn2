@@ -8,12 +8,12 @@ import MyContext from './context';
 import { SchemaService } from '../services/schemaService';
 import { GifService } from '../services/gifService';
 
-function renderCards({ types, value, gifsData }) {
-  if (!types || !gifsData) return;
-  console.log({ gifsData })
+function renderCards({ gifsData }) {
+  if (!gifsData || !gifsData?.gifs) return;
+  const { gifs: { data } } = gifsData;
+  console.log({ data })
   const cardsSchema = SchemaService.getCardsSchema;
-  // console.log(cardsSchema);
-  const cards = cardsSchema?.map((item, index) => <BusinessCard key={index} item={item} />);
+  const cards = cardsSchema?.map((item, index) => <BusinessCard key={index} item={item} gifData={data[index]} />);
   return (cards);
 }
 
@@ -32,7 +32,6 @@ export default function Content() {
   useEffect(() => {
     async function fetchGifs() {
       const gifs = await GifService.getGifs();
-      alert('!');
       setGifsData({ gifs });
     }
     if (!gifsData) {
@@ -46,7 +45,7 @@ export default function Content() {
       <ToastWithBackdrop show={showToast} />
       <MyContext.Provider value={{ state, dispatch }}>
         <Backdrop customComponent={state?.customComponent || 'funFacts'} noButton={true}></Backdrop>
-        <section className='cards'>{renderCards({ gifsData, types: ['profile', 'mockCheckout', 'dropDownNavbar', 'sendTokens'] })}</section> 
+        <section className='cards'>{renderCards({ gifsData })}</section> 
       </MyContext.Provider>  
     </main>);
 }

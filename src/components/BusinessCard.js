@@ -6,12 +6,13 @@ import 'animate.css';
 function Card(props?) {
   const { item } = props;
   if (!item) return;
+  console.log({ item })
   return (
     <article className={item?.classNameList}>
 
       <section className="profile_pic">
         <div className="business-card__profile-pic-container">
-          <ProfilePic src={item?.picSrc} />
+          <ProfilePic src={item?.picSrc} gifSrc={item?.picSrcGif} />
         </div>
       </section>
 
@@ -29,7 +30,13 @@ function Card(props?) {
 }
 
 export default function BusinessCard(props?) {
-  const { item } = props;
+  const { item, gifData } = props;
+  console.log({ gifData });
+  const { images: { fixed_width_still: { url: urlStill } }, images: { fixed_width_downsampled: { url: urlGif } } } = gifData;
+  if (urlStill) {
+    item.picSrc = urlStill;
+    item.picSrcGif = urlGif;
+  };
   return <Card item={item} />;
 }
 
