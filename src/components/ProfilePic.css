@@ -22,8 +22,13 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .profile-pic-container__profile-pic.profile {
+    border-radius: 1rem 1rem 0rem 0rem;    
+}
+
 .profile-pic-container__profile-pic {
    width: 100%;
+   border-radius: 1rem;
 }
 
 .profile-pic-container {
