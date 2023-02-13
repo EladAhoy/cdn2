@@ -7,6 +7,9 @@ import { initialState, reducer } from './reducer';
 import MyContext from './context';
 import { SchemaService } from '../services/schemaService';
 import { GifService } from '../services/gifService';
+import { store } from '../configure-store';
+import { Provider } from 'react-redux';
+
 
 function renderCards({ gifsData }) {
   if (!gifsData || !gifsData?.gifs) return;
@@ -30,6 +33,10 @@ export default function Content() {
 
   useEffect(() => {
     async function fetchGifs() {
+      // const hello = await GifService.getHello();
+      // console.log({ hello });
+      const getGifsData = await GifService.getGifsData();
+      console.log({ getGifsData })
       const gifs = await GifService.getGifs();
       setGifsData({ gifs });
     }
@@ -40,13 +47,15 @@ export default function Content() {
   }, []);
 
   return (
+    <Provider store={store}>
     <main className="content">
       <ToastWithBackdrop show={showToast} />
       <MyContext.Provider value={{ state, dispatch }}>
         <Backdrop customComponent={state?.customComponent || 'funFacts'} noButton={true}></Backdrop>
-        <section className='cards'>{renderCards({ gifsData })}</section> 
+          <section className='cards'>{renderCards({ gifsData })}</section> 
       </MyContext.Provider>  
-    </main>);
+      </main>
+    </Provider>);
 }
 
 
