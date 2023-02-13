@@ -5,14 +5,13 @@
 }
 
 .profile-pic-container {
-  min-height: 18rem; 
   display: flex;
   place-items: center;
   place-content: center;
 }
 
 .profile-pic-container svg {
-  width: 80%;  
+  width: 80%;
   max-height: 14rem;
 }
 
@@ -23,16 +22,11 @@
 
 @media only screen and (max-width: 767px) {
   .profile-pic-container__profile-pic.profile {
-    border-radius: 1rem 1rem 0rem 0rem;    
-}
+    border-radius: 1rem 1rem 0rem 0rem;
+  }
 
-.profile-pic-container__profile-pic {
-   width: 100%;
-   border-radius: 1rem;
-}
-
-.profile-pic-container {
-  min-height: unset 
-}
-
+  .profile-pic-container__profile-pic {
+    width: 100%;
+    border-radius: 1rem;
+  }
 }
