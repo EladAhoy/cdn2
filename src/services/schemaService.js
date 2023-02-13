@@ -45,6 +45,17 @@ export class SchemaService {
       aboutText: "Create an ETH payment gateway. Include connection to MetaMask and a tool to check if an ETH address is valid.",
       classNameList: 'business-card-container-left animate__animated animate__fadeInRight'
     },
+    {
+      id: 5,
+      type: 'counter',
+      picSrc: 'send-eth',
+      name: 'Counter',
+      role: 'Sample Project',
+      gitName: 'sendTokens',
+      aboutHeader: 'Task',
+      aboutText: "Create a counter.",
+      classNameList: 'business-card-container-left animate__animated animate__fadeInRight'
+    },
   ];
   static get getCardsSchema() {
     return this.cardsSchema;
