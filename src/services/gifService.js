@@ -19,7 +19,7 @@ export class GifService {
   }
   static async getHello() {
     try {
-      let res = await fetch(this.#apiUrl);
+      let res = await fetch(this.#apiUrl);      
       const resAsJson = await res.json();
       return resAsJson?.message;
 
@@ -29,7 +29,8 @@ export class GifService {
   }
   static async getGifsData() {
     try {
-      let res = await fetch(this.#gifsUrl);
+      // let res = await fetch(this.#gifsUrl);
+      let res = await fetch(this.#url);
       const resAsJson = await res.json();
       return resAsJson;
 

@@ -30,8 +30,8 @@ export default function Content() {
 
   useEffect(() => {
     async function fetchGifs() {
-      const hello = await GifService.getHello();
-      console.log({ hello });
+      // const hello = await GifService.getHello();
+      // console.log({ hello });
       const getGifsData = await GifService.getGifsData();
       console.log({ getGifsData })
       const gifs = await GifService.getGifs();
