@@ -6,6 +6,7 @@ import FunFacts from './FunFacts';
 import DropDownNavbar from './DropDown';
 import { optionsComplex } from './Options';
 import SendTokens from './SendTokens';
+import { Container } from './counter/container';
 
 
 export default function Backdrop({ children, customComponent, noButton }) {
@@ -33,6 +34,7 @@ export default function Backdrop({ children, customComponent, noButton }) {
           {customComponent === 'mockCheckout' ? <CheckoutPage /> : ''}
           {customComponent === 'dropDownNavbar' ? <DropDownNavbar options={optionsComplex} /> : ''}
           {customComponent === 'sendTokens' ? <SendTokens /> : ''}
+          {customComponent === 'counter' ? <Container /> : ''}
           <div className="textWrap"></div>
         </div>)}
       </section>

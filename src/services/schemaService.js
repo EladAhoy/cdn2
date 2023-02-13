@@ -28,7 +28,7 @@ export class SchemaService {
       type: 'dropDownNavbar',
       picSrc: 'menu-key',
       name: 'Dropdown Menu',
-      role: 'Sample Project',
+      role: 'Recursion',
       gitName: 'mockCheckout',
       aboutHeader: 'Task',
       aboutText: "Create an dropdown menu that gets a JSON object as input, and uses recursion to include nested dropdown menus as needed. No need to handle overlapping issues.",
@@ -39,10 +39,21 @@ export class SchemaService {
       type: 'sendTokens',
       picSrc: 'send-eth',
       name: 'Send ETH',
-      role: 'Sample Project',
+      role: 'Blockchain, ETH',
       gitName: 'sendTokens',
       aboutHeader: 'Task',
       aboutText: "Create an ETH payment gateway. Include connection to MetaMask and a tool to check if an ETH address is valid.",
+      classNameList: 'business-card-container-left animate__animated animate__fadeInRight'
+    },
+    {
+      id: 5,
+      type: 'counter',
+      picSrc: 'send-eth',
+      name: 'Counter',
+      role: 'React, Redux',
+      gitName: 'sendTokens',
+      aboutHeader: 'Task',
+      aboutText: "Create a counter.",
       classNameList: 'business-card-container-left animate__animated animate__fadeInRight'
     },
   ];
