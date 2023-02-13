@@ -109,7 +109,7 @@
   .business-card-container-left {
     margin-inline: unset;
     width: unset;
-    padding-block-start: 2rem;
+    /* padding-block-start: 2rem; */
   }
 
   .business-card-container {
