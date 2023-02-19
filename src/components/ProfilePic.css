@@ -8,6 +8,8 @@
   display: flex;
   place-items: center;
   place-content: center;
+  height: 17rem;
+  overflow: hidden;
 }
 
 .profile-pic-container svg {
