@@ -10,7 +10,7 @@
   place-content: center;
   height: 17rem;
   overflow: hidden;
-  border-radius: 1rem;
+  border-radius: 1rem 1rem 0 0;
 }
 
 .profile-pic-container svg {
