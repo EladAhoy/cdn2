@@ -1,13 +1,16 @@
 .profile-pic-container__profile-pic {
   width: 23rem;
   pointer-events: none;
-  border-radius: 1rem 1rem 0rem 0rem;
+  border-radius: 1rem;
 }
 
 .profile-pic-container {
   display: flex;
   place-items: center;
   place-content: center;
+  height: 17rem;
+  overflow: hidden;
+  border-radius: 1rem;
 }
 
 .profile-pic-container svg {
@@ -21,6 +24,10 @@
 }
 
 @media only screen and (max-width: 767px) {
+  .profile-pic-container {
+    height: unset
+  }
+
   .profile-pic-container__profile-pic.profile {
     border-radius: 1rem 1rem 0rem 0rem;
   }
