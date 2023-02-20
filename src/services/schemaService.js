@@ -56,6 +56,17 @@ export class SchemaService {
       aboutText: "Create a counter.",
       classNameList: 'business-card-container-left animate__animated animate__fadeInRight'
     },
+    {
+      id: 6,
+      type: 'redwoodBlog',
+      picSrc: '',
+      name: 'Blog Site',
+      role: 'RedwoodJS, GraphQL, Prisma, React',
+      gitName: 'sendTokens',
+      aboutHeader: 'Task',
+      aboutText: "React, Jamstack, GraphQL, Prisma, TypeScript, Jest, Storybook, deployed on Netlify.",
+      classNameList: 'business-card-container-left animate__animated animate__fadeInRight'
+    },
   ];
   static get getCardsSchema() {
     return this.cardsSchema;
