@@ -23,6 +23,37 @@ export default function Backdrop({ children, customComponent, noButton }) {
     return response;
   }
 
+  const goToSite = (customComponent) => {
+    let link;
+    switch (customComponent) {
+      case 'redwoodBlog':
+        link = 'https://redwoodjs-blog-shesdev.netlify.app/';
+        window.location.href = link;
+        break;
+      default:
+        return;
+    }
+  };
+
+  const getComponent = () => {
+    switch (state?.customComponent) {
+      case 'funFacts':
+        return <FunFacts />;
+      case 'mockCheckout':
+        return <CheckoutPage />;
+      case 'dropDownNavbar':
+        return <DropDownNavbar options={optionsComplex} />;
+      case 'sendTokens':
+        return <SendTokens />;
+      case 'counter':
+        return <Container />;
+      case 'redwoodBlog':
+        return goToSite(customComponent);
+      default:
+        return '';
+    }
+  }
+
   return (
     <>
       <section className={renderClasses()}>
@@ -30,11 +61,7 @@ export default function Backdrop({ children, customComponent, noButton }) {
         {state.clicked && (<div className="backdrop">
           <button onClick={handleClick}>Close</button>
           {children}
-          {customComponent === 'funFacts' ? <FunFacts /> : ''}
-          {customComponent === 'mockCheckout' ? <CheckoutPage /> : ''}
-          {customComponent === 'dropDownNavbar' ? <DropDownNavbar options={optionsComplex} /> : ''}
-          {customComponent === 'sendTokens' ? <SendTokens /> : ''}
-          {customComponent === 'counter' ? <Container /> : ''}
+          {getComponent()}
           <div className="textWrap"></div>
         </div>)}
       </section>
