@@ -54,12 +54,16 @@ export default function Backdrop({ children, customComponent, noButton }) {
     }
   }
 
+  const renderCloseButton = () => {
+    return state?.customComponent === 'redwoodBlog' ? '' : <button onClick={handleClick}>Close</button>;
+  }
+
   return (
     <>
       <section className={renderClasses()}>
         {renderButton()}
         {state.clicked && (<div className="backdrop">
-          <button onClick={handleClick}>Close</button>
+          {renderCloseButton()}
           {children}
           {getComponent()}
           <div className="textWrap"></div>

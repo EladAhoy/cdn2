@@ -61,9 +61,9 @@ export class SchemaService {
       type: 'redwoodBlog',
       picSrc: '',
       name: 'Blog Site',
-      role: 'RedwoodJS, GraphQL, Prisma, React',
+      role: 'RedwoodJS',
       gitName: 'sendTokens',
-      aboutHeader: 'Task',
+      aboutHeader: 'Stack',
       aboutText: "React, Jamstack, GraphQL, Prisma, TypeScript, Jest, Storybook, deployed on Netlify.",
       classNameList: 'business-card-container-left animate__animated animate__fadeInRight'
     },
