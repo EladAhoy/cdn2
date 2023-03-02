@@ -7,6 +7,7 @@ import DropDownNavbar from './DropDown';
 import { optionsComplex } from './Options';
 import SendTokens from './SendTokens';
 import { Container } from './counter/container';
+import MediaCard from './media-card/MediaCard';
 
 
 export default function Backdrop({ children, customComponent, noButton }) {
@@ -23,17 +24,17 @@ export default function Backdrop({ children, customComponent, noButton }) {
     return response;
   }
 
-  const goToSite = (customComponent) => {
-    let link;
-    switch (customComponent) {
-      case 'redwoodBlog':
-        link = 'https://redwoodjs-blog-shesdev.netlify.app/';
-        window.location.href = link;
-        break;
-      default:
-        return;
-    }
-  };
+  // const goToSite = (customComponent) => {
+  //   let link;
+  //   switch (customComponent) {
+  //     case 'redwoodBlog':
+  //       link = 'https://redwoodjs-blog-shesdev.netlify.app/';
+  //       window.location.href = link;
+  //       break;
+  //     default:
+  //       return;
+  //   }
+  // };
 
   const getComponent = () => {
     switch (state?.customComponent) {
@@ -48,14 +49,16 @@ export default function Backdrop({ children, customComponent, noButton }) {
       case 'counter':
         return <Container />;
       case 'redwoodBlog':
-        return goToSite(customComponent);
+        // return goToSite(customComponent);
+        return <MediaCard />
       default:
         return '';
     }
   }
 
   const renderCloseButton = () => {
-    return state?.customComponent === 'redwoodBlog' ? '' : <button onClick={handleClick}>Close</button>;
+    // return state?.customComponent === 'redwoodBlog' ? '' : <button onClick={handleClick}>Close</button>;
+    return <button onClick={handleClick}>Close</button>;
   }
 
   return (
