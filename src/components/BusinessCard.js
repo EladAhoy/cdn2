@@ -2,10 +2,14 @@ import './BusinessCard.css';
 import ProfilePic from './ProfilePic';
 import MailAndLinkedInButtons from './MailAndLinkedInButtons';
 import 'animate.css';
+import Scrollbar from './scrollbar/ScrollBar';
 
 function Card(props?) {
   const { item } = props;
   if (!item) return;
+
+  const isMobile = window.innerWidth < 768;
+
   return (
     <article className={item?.classNameList}>
 
@@ -23,7 +27,9 @@ function Card(props?) {
 
       <section className="about">
         <h3 className='about__header'>{item?.aboutHeader}</h3>
-        <p className='about__text'>{item?.aboutText}</p>
+        {isMobile ? <Scrollbar>
+          <p className='about__text'>{item?.aboutText}</p>
+        </Scrollbar> : <p className='about__text'>{item?.aboutText}</p>}
       </section>
     </article>);
 }

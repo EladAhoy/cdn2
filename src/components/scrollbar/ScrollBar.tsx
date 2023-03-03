@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { FixMeLater } from "../../types/general";
+import "./ScrollBar.css";
 //@ts-ignore
 const Scrollbar = ({
   children,
