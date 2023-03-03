@@ -1,28 +1,28 @@
-import { useContext } from 'react';
-import './Backdrop.css';
-import CheckoutPage from './CheckoutPage';
-import MyContext from './context';
-import FunFacts from './FunFacts';
-import DropDownNavbar from './DropDown';
-import { optionsComplex } from './Options';
-import SendTokens from './SendTokens';
-import { Container } from './counter/container';
-import MediaCard from './media-card/MediaCard';
-
+import { useContext } from "react";
+import "./Backdrop.css";
+import CheckoutPage from "./CheckoutPage";
+import MyContext from "./context";
+import FunFacts from "./FunFacts";
+import DropDownNavbar from "./DropDown";
+import { optionsComplex } from "./Options";
+import SendTokens from "./SendTokens";
+import { Container } from "./counter/container";
+import MediaCard from "./media-card/MediaCard";
+import React from "react";
 
 export default function Backdrop({ children, customComponent, noButton }) {
-
   const { state, dispatch } = useContext(MyContext);
-  const handleClick = () => dispatch({ type: "CLICK", payload: { customComponent } });
+  const handleClick = () =>
+    dispatch({ type: "CLICK", payload: { customComponent } });
   const renderButton = () => {
-    return noButton ? '' : <button onClick={handleClick}>Open</button>;
-  }
+    return noButton ? "" : <button onClick={handleClick}>Open</button>;
+  };
 
   const renderClasses = () => {
     let response;
-    response = state.clicked ? 'backdrop-container open' : 'backdrop-container';
+    response = state.clicked ? "backdrop-container open" : "backdrop-container";
     return response;
-  }
+  };
 
   // const goToSite = (customComponent) => {
   //   let link;
@@ -38,41 +38,42 @@ export default function Backdrop({ children, customComponent, noButton }) {
 
   const getComponent = () => {
     switch (state?.customComponent) {
-      case 'funFacts':
+      case "funFacts":
         return <FunFacts />;
-      case 'mockCheckout':
+      case "mockCheckout":
         return <CheckoutPage />;
-      case 'dropDownNavbar':
+      case "dropDownNavbar":
         return <DropDownNavbar options={optionsComplex} />;
-      case 'sendTokens':
+      case "sendTokens":
         return <SendTokens />;
-      case 'counter':
+      case "counter":
         return <Container />;
-      case 'redwoodBlog':
+      case "redwoodBlog":
         // return goToSite(customComponent);
-        return <MediaCard />
+        return <MediaCard />;
       default:
-        return '';
+        return "";
     }
-  }
+  };
 
   const renderCloseButton = () => {
     // return state?.customComponent === 'redwoodBlog' ? '' : <button onClick={handleClick}>Close</button>;
     return <button onClick={handleClick}>Close</button>;
-  }
+  };
 
   return (
     <>
       <section className={renderClasses()}>
         {renderButton()}
-        {state.clicked && (<div className="backdrop">
-          {renderCloseButton()}
-          {children}
-          {getComponent()}
-          <div className="textWrap"></div>
-        </div>)}
+        {state.clicked && (
+          <div className="backdrop">
+            {renderCloseButton()}
+            {children}
+            {getComponent()}
+            <div className="textWrap"></div>
+          </div>
+        )}
       </section>
-    </>);
+    </>
+  );
 }
-
-

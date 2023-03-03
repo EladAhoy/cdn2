@@ -52,7 +52,9 @@ export default function Content() {
       <ToastWithBackdrop show={showToast} />
       <MyContext.Provider value={{ state, dispatch }}>
         <Backdrop customComponent={state?.customComponent || 'funFacts'} noButton={true}></Backdrop>
-          <section className='cards'>{renderCards({ gifsData })}</section> 
+
+          <section className='cards'>{renderCards({ gifsData })}</section>
+
       </MyContext.Provider>  
       </main>
     </Provider>);
