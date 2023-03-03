@@ -1,4 +1,13 @@
-    iframe {
-      width: 100%;
-      height: 100vh;
-    }
+   iframe {
+     margin: auto;
+     min-width: 75%;
+     min-height: 50%;
+   }
+
+   @media only screen and (max-width: 767px) {
+     iframe.MuiCardMedia-root.MuiCardMedia-media {
+       min-width: unset;
+       min-height: unset;
+       width: unset;
+     }
+   }
