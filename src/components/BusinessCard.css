@@ -109,12 +109,14 @@
   .business-card-container-left {
     margin-inline: unset;
     width: unset;
+    max-width: 90vw;
     scroll-snap-align: center;
     transform: rotateX(180deg);
   }
 
   .business-card-container {
     width: unset;
+    max-width: 90vw;
     scroll-snap-align: center;
     transform: rotateX(180deg);
   }
