@@ -110,11 +110,18 @@
     margin-inline: unset;
     width: unset;
     scroll-snap-align: center;
+    transform: rotateX(180deg);
   }
 
   .business-card-container {
     width: unset;
     scroll-snap-align: center;
+    transform: rotateX(180deg);
+  }
+
+  .business-card-container.animate__fadeInLeft,
+  .business-card-container-left.animate__fadeInRight {
+    transform: rotateX(180deg);
   }
 
 }

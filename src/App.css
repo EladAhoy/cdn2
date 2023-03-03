@@ -32,7 +32,7 @@
 
 
 @media only screen and (max-width: 767px) {
-  ::-webkit-scrollbar-thumb {
+  /* ::-webkit-scrollbar-thumb {
     background-clip: unset;
-  }
+  } */
 }
