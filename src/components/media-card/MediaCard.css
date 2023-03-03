@@ -1,13 +1,13 @@
    iframe {
      margin: auto;
      min-width: 75%;
-     min-height: 50%;
+     min-height: 75%;
+     width: unset;
    }
 
    @media only screen and (max-width: 767px) {
      iframe.MuiCardMedia-root.MuiCardMedia-media {
        min-width: unset;
        min-height: unset;
-       width: unset;
      }
    }
