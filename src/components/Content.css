@@ -17,7 +17,10 @@ section.shows {
 
 @media only screen and (max-width: 767px) {
   main.content section.cards {
-    flex-direction: column;
+    /* flex-direction: column; */
+    /* allows side card scrolling*/
     gap: 1rem;
+    /* overflow: unset; */
+    /*return to remove side scrolling space   */
   }
 }
