@@ -109,11 +109,12 @@
   .business-card-container-left {
     margin-inline: unset;
     width: unset;
-    /* padding-block-start: 2rem; */
+    scroll-snap-align: center;
   }
 
   .business-card-container {
     width: unset;
+    scroll-snap-align: center;
   }
 
 }

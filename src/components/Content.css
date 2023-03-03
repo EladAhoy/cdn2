@@ -22,5 +22,9 @@ section.shows {
     gap: 1rem;
     /* overflow: unset; */
     /*return to remove side scrolling space   */
+
+    /*Snapping on horizontal scrolling*/
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
   }
 }
