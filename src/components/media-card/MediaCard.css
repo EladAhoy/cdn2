@@ -1,6 +1,7 @@
    iframe {
      margin: auto;
-     min-width: 75%;
+     min-width: 50%;
+     max-width: 90%;
      min-height: 75%;
      width: unset;
    }
@@ -9,5 +10,6 @@
      iframe.MuiCardMedia-root.MuiCardMedia-media {
        min-width: unset;
        min-height: unset;
+       width: unset;
      }
    }
