@@ -4,6 +4,10 @@ import MailAndLinkedInButtons from './MailAndLinkedInButtons';
 import 'animate.css';
 import Scrollbar from './scrollbar/ScrollBar';
 
+function validateImageHeight({ imgHeight, imgWidth }) {
+  return (+imgHeight / +imgWidth) < 1;
+}
+
 function Card(props?) {
   const { item } = props;
   if (!item) return;
@@ -15,7 +19,7 @@ function Card(props?) {
 
       <section className="profile_pic">
         <div className="business-card__profile-pic-container">
-          <ProfilePic src={item?.picSrc} gifSrc={item?.picSrcGif} type={item?.type} />
+          <ProfilePic src={item?.picSrc} gifSrc={item?.picSrcGif} type={item?.type} scaleImg={item?.scaleImage} />
         </div>
       </section>
 
@@ -37,9 +41,11 @@ function Card(props?) {
 export default function BusinessCard(props?) {
   const { item, gifData } = props;
   const { images: { fixed_width_still: { url: urlStill } }, images: { fixed_width_downsampled: { url: urlGif } } } = gifData;
+  const { images: { fixed_width_still: { height: imgHeight } }, images: { fixed_width_still: { width: imgWidth } } } = gifData;
   if (urlStill) {
     item.picSrc = urlStill;
     item.picSrcGif = urlGif;
+    item.scaleImage = validateImageHeight({ imgHeight, imgWidth });
   };
   return <Card item={item} />;
 }

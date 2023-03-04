@@ -4,6 +4,10 @@
   border-radius: 1rem;
 }
 
+.profile-pic-container__profile-pic.scale-img {
+  transform: scale(1.5);
+}
+
 .profile-pic-container {
   display: flex;
   place-items: center;
