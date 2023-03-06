@@ -1,10 +1,10 @@
-import YouTube from 'react-youtube';
 import './MediaCard.css';
+import CardMedia from '@mui/material/CardMedia';
+
 export default function MediaCard() {
 
   return (
-    <div>
-      <YouTube videoId="Zk1NfO_LCFU" />
-    </div>
+    <CardMedia component='iframe' src="https://www.youtube.com/embed/Zk1NfO_LCFU">
+    </CardMedia>
   );
 }
