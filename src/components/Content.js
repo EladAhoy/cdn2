@@ -19,6 +19,15 @@ function renderCards({ gifsData }) {
   return (cards);
 }
 
+function validateGifsHeight({ gifs }) {
+  if (!gifs || !gifs?.data) return;
+  const { data } = gifs;
+  const gifsHeight = data.map(item => item.images.original.height);
+  const gifsWidth = data.map(item => item.images.original.width);
+  const gifsRatio = gifsHeight.map((item, index) => item / gifsWidth[index]);
+  console.log({ gifsRatio });
+}
+
 export default function Content() {
 
   const [showToast, setshowToast] = useState(true);
@@ -38,6 +47,7 @@ export default function Content() {
       const getGifsData = await GifService.getGifsData();
       console.log({ getGifsData })
       const gifs = await GifService.getGifs();
+      validateGifsHeight({ gifs });
       setGifsData({ gifs });
     }
     if (!gifsData) {
