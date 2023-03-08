@@ -36,6 +36,7 @@ div.backdrop {
     /* position: absolute; */
     padding: 0.5rem;
     overflow-x: hidden;
+    box-sizing: border-box;
   }
 
   section.backdrop-container.open {

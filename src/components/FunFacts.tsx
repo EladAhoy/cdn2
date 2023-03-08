@@ -1,5 +1,6 @@
-import './FunFacts.css';
-import LogoInContent from './LogoInContent';
+import React from "react";
+import "./FunFacts.css";
+import LogoInContent from "./LogoInContent";
 
 export default function FunFacts() {
   return (
@@ -15,7 +16,6 @@ export default function FunFacts() {
         <li>Is maintained by Facebook</li>
         <li>Powers thousands of enterprise apps, including mobile apps</li>
       </ul>
-    </article>);
+    </article>
+  );
 }
-
-
