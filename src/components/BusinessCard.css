@@ -109,11 +109,25 @@
   .business-card-container-left {
     margin-inline: unset;
     width: unset;
-    /* padding-block-start: 2rem; */
+    max-width: 90vw;
+    scroll-snap-align: center;
+    transform: rotateX(180deg);
   }
 
   .business-card-container {
     width: unset;
+    max-width: 90vw;
+    scroll-snap-align: center;
+    transform: rotateX(180deg);
+  }
+
+  .business-card-container.animate__fadeInLeft,
+  .business-card-container-left.animate__fadeInRight {
+    transform: rotateX(180deg);
+  }
+
+  .business-card-container :is(.about) {
+    padding-block-end: 7rem;
   }
 
 }
