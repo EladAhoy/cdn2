@@ -1,4 +1,6 @@
-export const counterReducer = function (state = 0, action) {
+import { FixMeLater } from "../../types/general";
+
+export const counterReducer = function (state = 0, action: FixMeLater) {
   switch (action.type) {
     case "INCREMENT":
       return state + 1;

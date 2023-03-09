@@ -1,4 +1,7 @@
-export default function ErrorMessage({ message }) {
+import React from "react";
+import { FixMeLater } from "../types/general";
+
+export default function ErrorMessage({ message }: FixMeLater) {
   if (!message) return null;
 
   return (

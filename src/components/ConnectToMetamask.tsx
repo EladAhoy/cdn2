@@ -1,21 +1,28 @@
-import { useState, useEffect } from 'react';
-import { ethers } from 'ethers';
+import { useState, useEffect } from "react";
+import { ethers } from "ethers";
+import React from "react";
 
 export default function ConnectToMetamask() {
   const [haveMetamask, sethaveMetamask] = useState(true);
 
-  const [accountAddress, setAccountAddress] = useState('');
-  const [accountBalance, setAccountBalance] = useState('');
+  const [accountAddress, setAccountAddress] = useState("");
+  const [accountBalance, setAccountBalance] = useState("");
 
   const [isConnected, setIsConnected] = useState(false);
 
+  //@ts-ignore
   const { ethereum } = window;
 
   // const provider = new ethers.providers.Web3Provider(window.ethereum);
-  const provider = ((window.ethereum != null) ? new ethers.providers.Web3Provider(window.ethereum) : ethers.providers.getDefaultProvider());
-
+  const provider =
+    //@ts-ignore
+    window.ethereum != null
+      ? //@ts-ignore
+        new ethers.providers.Web3Provider(window.ethereum)
+      : ethers.providers.getDefaultProvider();
 
   useEffect(() => {
+    //@ts-ignore
     const { ethereum } = window;
     const checkMetamaskAvailability = async () => {
       if (!ethereum) {
@@ -33,7 +40,7 @@ export default function ConnectToMetamask() {
       }
 
       const accounts = await ethereum.request({
-        method: 'eth_requestAccounts',
+        method: "eth_requestAccounts",
       });
 
       let balance = await provider.getBalance(accounts[0]);
@@ -66,7 +73,9 @@ export default function ConnectToMetamask() {
                   <p>{accountBalance}</p>
                 </div>
               </div>
-            ) : (<></>)}
+            ) : (
+              <></>
+            )}
 
             {isConnected ? (
               <p className="info">🎉 Connected Successfully</p>
@@ -83,4 +92,3 @@ export default function ConnectToMetamask() {
     </div>
   );
 }
-

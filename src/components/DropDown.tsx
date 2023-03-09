@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import { FixMeLater } from "../types/general";
 import "./DropDown.css";
 
-function DropdownMenu({ options }) {
+function DropdownMenu({ options }: FixMeLater) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {
@@ -10,12 +11,10 @@ function DropdownMenu({ options }) {
 
   return (
     <>
-      <button onClick={handleClick}>
-        {options.label}
-      </button>
+      <button onClick={handleClick}>{options.label}</button>
       {isOpen && (
-        <ul className='nested-dropdown-list'>
-          {options.children.map((child, index) => (
+        <ul className="nested-dropdown-list">
+          {options.children.map((child: FixMeLater, index: FixMeLater) => (
             <li key={index}>
               {child.children ? (
                 <DropdownMenu options={child} />
@@ -30,12 +29,12 @@ function DropdownMenu({ options }) {
   );
 }
 
-export default function DropDownNavbar({ options }) {
+export default function DropDownNavbar({ options }: FixMeLater) {
   return (
-    <nav className='dropdown-navbar'>
+    <nav className="dropdown-navbar">
       <h1>Dropdown Navbar</h1>
       <ul>
-        {options.map((option, index) => (
+        {options.map((option: FixMeLater, index: FixMeLater) => (
           <li key={index}>
             {option.children ? (
               <DropdownMenu options={option} />
@@ -48,5 +47,3 @@ export default function DropDownNavbar({ options }) {
     </nav>
   );
 }
-
-

@@ -1,6 +1,8 @@
+import { FixMeLater } from "../types/general";
+
 export const initialState = { clicked: false };
 
-export function reducer(state, action) {
+export function reducer(state: FixMeLater, action: FixMeLater) {
   switch (action.type) {
     case "CLICK":
       const { customComponent } = action.payload;
@@ -9,4 +11,3 @@ export function reducer(state, action) {
       throw new Error();
   }
 }
-

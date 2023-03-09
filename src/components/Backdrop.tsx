@@ -9,9 +9,14 @@ import SendTokens from "./SendTokens";
 import { Container } from "./counter/container";
 import MediaCard from "./media-card/MediaCard";
 import React from "react";
+import { FixMeLater } from "../types/general";
 
-export default function Backdrop({ children, customComponent, noButton }) {
-  const { state, dispatch } = useContext(MyContext);
+export default function Backdrop({
+  children,
+  customComponent,
+  noButton,
+}: FixMeLater) {
+  const { state, dispatch }: FixMeLater = useContext(MyContext);
   const handleClick = () =>
     dispatch({ type: "CLICK", payload: { customComponent } });
   const renderButton = () => {
