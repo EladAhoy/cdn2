@@ -5,8 +5,9 @@ import "./ScrollBarHorizontal.css";
 const ScrollbarHorizontal = ({
   children,
   className,
+  cards,
   ...props
-}: React.ComponentPropsWithoutRef<"div">) => {
+}: React.ComponentPropsWithoutRef<any>) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const scrollTrackRef = useRef<HTMLDivElement>(null);
   const scrollThumbRef = useRef<HTMLDivElement>(null);
@@ -15,19 +16,19 @@ const ScrollbarHorizontal = ({
   const [scrollStartPosition, setScrollStartPosition] = useState<number | null>(
     null
   );
-  const [initialScrollTop, setInitialScrollTop] = useState<number>(0);
+  const [initialScrollWidth, setInitialScrollWidth] = useState<number>(0);
   const [isDragging, setIsDragging] = useState(false);
 
   function handleResize(ref: HTMLDivElement, trackSize: number) {
-    const { clientHeight, scrollHeight } = ref;
-    setThumbHeight(Math.max((clientHeight / scrollHeight) * trackSize, 20));
+    const { clientWidth, scrollWidth } = ref;
+    setThumbHeight(Math.max((clientWidth / scrollWidth) * trackSize, 20));
   }
 
-  function handleScrollButton(direction: "up" | "down") {
+  function handleScrollButton(direction: "left" | "right") {
     const { current } = contentRef;
     if (current) {
-      const scrollAmount = direction === "down" ? 200 : -200;
-      current.scrollBy({ top: scrollAmount, behavior: "smooth" });
+      const scrollAmount = direction === "right" ? 200 : -200;
+      current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   }
 
@@ -38,18 +39,18 @@ const ScrollbarHorizontal = ({
       const { current: trackCurrent } = scrollTrackRef;
       const { current: contentCurrent } = contentRef;
       if (trackCurrent && contentCurrent) {
-        const { clientY } = e;
+        const { clientX } = e;
         const target = e.target as HTMLDivElement;
         const rect = target.getBoundingClientRect();
-        const trackTop = rect.top;
+        const trackLeft = rect.right;
         const thumbOffset = -(thumbHeight / 2);
         const clickRatio =
-          (clientY - trackTop + thumbOffset) / trackCurrent.clientHeight;
+          (clientX - trackLeft + thumbOffset) / trackCurrent.clientWidth;
         const scrollAmount = Math.floor(
-          clickRatio * contentCurrent.scrollHeight
+          clickRatio * contentCurrent.scrollWidth
         );
         contentCurrent.scrollTo({
-          top: scrollAmount,
+          left: scrollAmount,
           behavior: "smooth",
         });
       }
@@ -65,20 +66,21 @@ const ScrollbarHorizontal = ({
     ) {
       return;
     }
-    const { scrollTop: contentTop, scrollHeight: contentHeight } =
+    const { scrollLeft: contentLeft, scrollWidth: contentWidth } =
       contentRef.current;
-    const { clientHeight: trackHeight } = scrollTrackRef.current;
-    let newTop = (+contentTop / +contentHeight) * trackHeight;
-    newTop = Math.min(newTop, trackHeight - thumbHeight);
+    const { clientWidth: trackHeight } = scrollTrackRef.current;
+    let newLeft = (+contentLeft / +contentWidth) * trackHeight;
+    newLeft = Math.min(newLeft, trackHeight - thumbHeight);
     const thumb = scrollThumbRef.current;
-    thumb.style.top = `${newTop}px`;
+    thumb.style.top = `${newLeft}px`;
   }, [thumbHeight]);
 
   const handleThumbMousedown = useCallback((e: FixMeLater) => {
     e.preventDefault();
     e.stopPropagation();
-    setScrollStartPosition(e.clientY);
-    if (contentRef.current) setInitialScrollTop(contentRef.current.scrollTop);
+    setScrollStartPosition(e.clientX);
+    if (contentRef.current)
+      setInitialScrollWidth(contentRef.current.scrollLeft);
     setIsDragging(true);
   }, []);
 
@@ -99,31 +101,31 @@ const ScrollbarHorizontal = ({
       e.stopPropagation();
       if (isDragging) {
         const {
-          scrollHeight: contentScrollHeight,
-          offsetHeight: contentOffsetHeight,
+          scrollWidth: contentScrollWidth,
+          offsetWidth: contentOffsetWidth,
         }: FixMeLater = contentRef.current;
 
-        const deltaY =
+        const deltaX =
           //@ts-ignore
-          (e.clientY - scrollStartPosition) *
-          (contentOffsetHeight / thumbHeight);
-        const newScrollTop = Math.min(
-          initialScrollTop + deltaY,
-          contentScrollHeight - contentOffsetHeight
+          (e.clientX - scrollStartPosition) *
+          (contentOffsetWidth / thumbHeight);
+        const newScrollWidth = Math.min(
+          initialScrollWidth + deltaX,
+          contentScrollWidth - contentOffsetWidth
         );
 
         //@ts-ignore
-        contentRef.current.scrollTop = newScrollTop;
+        contentRef.current.scrollLeft = newScrollWidth;
       }
     },
-    [initialScrollTop, isDragging, scrollStartPosition, thumbHeight]
+    [initialScrollWidth, isDragging, scrollStartPosition, thumbHeight]
   );
 
   // If the content and the scrollbar track exist, use a ResizeObserver to adjust height of thumb and listen for scroll event to move the thumb
   useEffect(() => {
     if (contentRef.current && scrollTrackRef.current) {
       const ref = contentRef.current;
-      const { clientHeight: trackSize } = scrollTrackRef.current;
+      const { clientWidth: trackSize } = scrollTrackRef.current;
       observer.current = new ResizeObserver(() => {
         handleResize(ref, trackSize);
       });
@@ -151,12 +153,12 @@ const ScrollbarHorizontal = ({
   return (
     <div className="custom-scrollbars__container">
       <div className="custom-scrollbars__content" ref={contentRef} {...props}>
-        {children}
+        {cards}
       </div>
       <div className="custom-scrollbars__scrollbar">
         <button
           className="custom-scrollbars__button"
-          onClick={() => handleScrollButton("up")}
+          onClick={() => handleScrollButton("left")}
         >
           ⇑
         </button>
@@ -180,7 +182,7 @@ const ScrollbarHorizontal = ({
         </div>
         <button
           className="custom-scrollbars__button"
-          onClick={() => handleScrollButton("down")}
+          onClick={() => handleScrollButton("right")}
         >
           ⇓
         </button>

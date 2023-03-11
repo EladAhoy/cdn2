@@ -15,6 +15,7 @@
   overflow: auto;
   padding: 0 1rem;
   scrollbar-width: none;
+  display: flex;
 }
 
 .custom-scrollbars__content::-webkit-scrollbar {

@@ -75,8 +75,8 @@ export default function Content() {
             customComponent={state?.customComponent || "funFacts"}
             noButton={true}
           ></Backdrop>
-          <ScrollbarHorizontal>
-            <section className="cards">{renderCards({ gifsData })}</section>
+          <ScrollbarHorizontal cards={renderCards({ gifsData })}>
+            {/* <section className="cards">{renderCards({ gifsData })}</section> */}
           </ScrollbarHorizontal>
         </MyContext.Provider>
       </main>
