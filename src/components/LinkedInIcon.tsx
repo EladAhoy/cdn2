@@ -1,8 +1,9 @@
 import React from "react";
 import "./LinkedInIcon.css";
+//@ts-ignore
+import linkedInIconPath from "../img/linkedin.png";
 
 export default function LinkedInIcon() {
-  const linkedInIconPath = "../img/linkedin.png";
   return (
     <div className="linkedin-icon-container">
       <img

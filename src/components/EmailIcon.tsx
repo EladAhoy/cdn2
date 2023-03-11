@@ -1,8 +1,9 @@
 import React from "react";
 import "./EmailIcon.css";
+//@ts-ignore
+import emailIconPath from "../img/apple-mail.png";
 
 export default function EmailIcon() {
-  const emailIconPath = "../img/apple-mail.png";
   return (
     <div className="email-icon-container">
       <img

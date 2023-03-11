@@ -1,10 +1,10 @@
 import "./ProfilePic.css";
 import { FixMeLater } from "../types/general";
 import React from "react";
+//@ts-ignore
+import profile_pic_path from "../assets/profile_pic.jpg";
 
 export default function ProfilePic(props?: FixMeLater) {
-  const profile_pic_path = "../img/profile_pic.jpg";
-
   const handleMouseEnter = (event: FixMeLater) => {
     if (typeCondition) return;
     const containerDiv = event.currentTarget;

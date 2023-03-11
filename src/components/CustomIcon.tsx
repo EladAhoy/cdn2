@@ -1,10 +1,12 @@
 import React from "react";
 import { FixMeLater } from "../types/general";
 import "./CustomIcon.css";
+//@ts-ignore
+import gitIconPath from "../img/github.png";
+//@ts-ignore
+import emailIconPath from "../img/apple-mail.png";
 
 export default function CustomIcon(props?: FixMeLater) {
-  const gitIconPath = "../img/github.png";
-  const emailIconPath = "../img/apple-mail.png";
   if (props?.type === "git")
     return (
       <div className="custom-icon-container">
