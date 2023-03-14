@@ -1,3 +1,5 @@
+//regenerate a horizontal scrollbar based on the vertical scrollbar
+
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { FixMeLater } from "../../types/general";
 import "./ScrollBar.css";
@@ -150,7 +152,11 @@ const Scrollbar = ({
 
   return (
     <div className="custom-scrollbars__container">
-      <div className="custom-scrollbars__content" ref={contentRef} {...props}>
+      <div
+        className="custom-scrollbars__content vertical"
+        ref={contentRef}
+        {...props}
+      >
         {children}
       </div>
       <div className="custom-scrollbars__scrollbar">

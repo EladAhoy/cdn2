@@ -9,6 +9,11 @@
   position: relative;
 }
 
+.custom-scrollbars__content.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
 .custom-scrollbars__content {
   height: 30vh;
   -ms-overflow-style: none;

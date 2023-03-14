@@ -22,7 +22,7 @@ section.shows {
 
   main.content section.cards {
     gap: 1rem;
-    transform: rotateX(180deg);
+    /* transform: rotateX(180deg); */
     overflow-x: auto;
     /* allows side card scrolling*/
     /* flex-direction: column; */
