@@ -66,6 +66,10 @@
   padding-block-end: 1rem;
 }
 
+.cards .business-card-container-left:first-of-type {
+  margin-inline: 0;
+}
+
 .business-card-container-left h1.name {
   margin: 1rem 0 0;
   font-weight: 700;
@@ -105,29 +109,37 @@
   text-align: left;
 }
 
+
+.business-card-container-left :is(.about__text),
+.business-card-container :is(.about__text) {
+  max-height: 15vh;
+  overflow-y: auto;
+}
+
 @media only screen and (max-width: 767px) {
   .business-card-container-left {
     margin-inline: unset;
     width: unset;
     max-width: 90vw;
     scroll-snap-align: center;
-    transform: rotateX(180deg);
+    /* transform: rotateX(180deg); */
   }
 
   .business-card-container {
     width: unset;
     max-width: 90vw;
+    max-height: 70vh;
     scroll-snap-align: center;
-    transform: rotateX(180deg);
+    /* transform: rotateX(180deg); */
   }
 
-  .business-card-container.animate__fadeInLeft,
+  /* .business-card-container.animate__fadeInLeft,
   .business-card-container-left.animate__fadeInRight {
     transform: rotateX(180deg);
-  }
+  } */
 
-  .business-card-container :is(.about) {
-    padding-block-end: 7rem;
+  .business-card-container-left :is(.about__text),
+  .business-card-container :is(.about__text) {
+    max-height: 40vh;
   }
-
 }

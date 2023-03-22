@@ -15,6 +15,12 @@ section.shows {
   margin-block-start: 25rem;
 }
 
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
 @media only screen and (max-width: 767px) {
   main.content {
     padding-block-start: 1rem;
@@ -22,7 +28,7 @@ section.shows {
 
   main.content section.cards {
     gap: 1rem;
-    transform: rotateX(180deg);
+    /* transform: rotateX(180deg); */
     overflow-x: auto;
     /* allows side card scrolling*/
     /* flex-direction: column; */

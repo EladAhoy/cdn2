@@ -1,35 +1,34 @@
-//regenerate a horizontal scrollbar based on the vertical scrollbar
-
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import { FixMeLater } from "../../types/general";
-import "./ScrollBar.css";
+import "./ScrollBarHorizontal.css";
 //@ts-ignore
-const Scrollbar = ({
+const ScrollbarHorizontal = ({
   children,
   className,
+  cards,
   ...props
-}: React.ComponentPropsWithoutRef<"div">) => {
+}: React.ComponentPropsWithoutRef<any>) => {
   const contentRef = useRef<HTMLDivElement>(null);
   const scrollTrackRef = useRef<HTMLDivElement>(null);
   const scrollThumbRef = useRef<HTMLDivElement>(null);
   const observer = useRef<ResizeObserver | null>(null);
-  const [thumbHeight, setThumbHeight] = useState(20);
+  const [thumbWidth, setThumbWidth] = useState(20);
   const [scrollStartPosition, setScrollStartPosition] = useState<number | null>(
     null
   );
-  const [initialScrollTop, setInitialScrollTop] = useState<number>(0);
+  const [initialScrollLeft, setinitialScrollLeft] = useState<number>(0);
   const [isDragging, setIsDragging] = useState(false);
 
   function handleResize(ref: HTMLDivElement, trackSize: number) {
-    const { clientHeight, scrollHeight } = ref;
-    setThumbHeight(Math.max((clientHeight / scrollHeight) * trackSize, 20));
+    const { clientWidth, scrollWidth } = ref;
+    setThumbWidth(Math.max((clientWidth / scrollWidth) * trackSize, 20));
   }
 
-  function handleScrollButton(direction: "up" | "down") {
+  function handleScrollButton(direction: "left" | "right") {
     const { current } = contentRef;
     if (current) {
-      const scrollAmount = direction === "down" ? 200 : -200;
-      current.scrollBy({ top: scrollAmount, behavior: "smooth" });
+      const scrollAmount = direction === "right" ? 200 : -200;
+      current.scrollBy({ left: scrollAmount, behavior: "smooth" });
     }
   }
 
@@ -40,23 +39,23 @@ const Scrollbar = ({
       const { current: trackCurrent } = scrollTrackRef;
       const { current: contentCurrent } = contentRef;
       if (trackCurrent && contentCurrent) {
-        const { clientY } = e;
+        const { clientX } = e;
         const target = e.target as HTMLDivElement;
         const rect = target.getBoundingClientRect();
-        const trackTop = rect.top;
-        const thumbOffset = -(thumbHeight / 2);
+        const trackLeft = rect.left;
+        const thumbOffset = -(thumbWidth / 2);
         const clickRatio =
-          (clientY - trackTop + thumbOffset) / trackCurrent.clientHeight;
+          (clientX - trackLeft + thumbOffset) / trackCurrent.clientWidth;
         const scrollAmount = Math.floor(
-          clickRatio * contentCurrent.scrollHeight
+          clickRatio * contentCurrent.scrollWidth
         );
         contentCurrent.scrollTo({
-          top: scrollAmount,
+          left: scrollAmount,
           behavior: "smooth",
         });
       }
     },
-    [thumbHeight]
+    [thumbWidth]
   );
 
   const handleThumbPosition = useCallback(() => {
@@ -67,20 +66,20 @@ const Scrollbar = ({
     ) {
       return;
     }
-    const { scrollTop: contentTop, scrollHeight: contentHeight } =
+    const { scrollLeft: contentLeft, scrollWidth: contentWidth } =
       contentRef.current;
-    const { clientHeight: trackHeight } = scrollTrackRef.current;
-    let newTop = (+contentTop / +contentHeight) * trackHeight;
-    newTop = Math.min(newTop, trackHeight - thumbHeight);
+    const { clientWidth: trackHeight } = scrollTrackRef.current;
+    let newLeft = (+contentLeft / +contentWidth) * trackHeight;
+    newLeft = Math.min(newLeft - 7, trackHeight - thumbWidth); //FixMeLater 7
     const thumb = scrollThumbRef.current;
-    thumb.style.top = `${newTop}px`;
-  }, [thumbHeight]);
+    thumb.style.left = `${newLeft}px`;
+  }, [thumbWidth]);
 
   const handleThumbMousedown = useCallback((e: FixMeLater) => {
     e.preventDefault();
     e.stopPropagation();
-    setScrollStartPosition(e.clientY);
-    if (contentRef.current) setInitialScrollTop(contentRef.current.scrollTop);
+    setScrollStartPosition(e.clientX);
+    if (contentRef.current) setinitialScrollLeft(contentRef.current.scrollLeft);
     setIsDragging(true);
   }, []);
 
@@ -101,31 +100,30 @@ const Scrollbar = ({
       e.stopPropagation();
       if (isDragging) {
         const {
-          scrollHeight: contentScrollHeight,
-          offsetHeight: contentOffsetHeight,
+          scrollWidth: contentScrollWidth,
+          offsetWidth: contentOffsetWidth,
         }: FixMeLater = contentRef.current;
 
-        const deltaY =
+        const deltaX =
           //@ts-ignore
-          (e.clientY - scrollStartPosition) *
-          (contentOffsetHeight / thumbHeight);
-        const newScrollTop = Math.min(
-          initialScrollTop + deltaY,
-          contentScrollHeight - contentOffsetHeight
+          (e.clientX - scrollStartPosition) * (contentOffsetWidth / thumbWidth);
+        const newScrollWidth = Math.min(
+          initialScrollLeft + deltaX,
+          contentScrollWidth - contentOffsetWidth
         );
 
         //@ts-ignore
-        contentRef.current.scrollTop = newScrollTop;
+        contentRef.current.scrollLeft = newScrollWidth;
       }
     },
-    [initialScrollTop, isDragging, scrollStartPosition, thumbHeight]
+    [initialScrollLeft, isDragging, scrollStartPosition, thumbWidth]
   );
 
-  // If the content and the scrollbar track exist, use a ResizeObserver to adjust height of thumb and listen for scroll event to move the thumb
+  // If the content and the scrollbar track exist, use a ResizeObserver to adjust width of thumb and listen for scroll event to move the thumb
   useEffect(() => {
     if (contentRef.current && scrollTrackRef.current) {
       const ref = contentRef.current;
-      const { clientHeight: trackSize } = scrollTrackRef.current;
+      const { clientWidth: trackSize } = scrollTrackRef.current;
       observer.current = new ResizeObserver(() => {
         handleResize(ref, trackSize);
       });
@@ -153,16 +151,16 @@ const Scrollbar = ({
   return (
     <div className="custom-scrollbars__container">
       <div
-        className="custom-scrollbars__content vertical"
+        className="custom-scrollbars__content horizontal"
         ref={contentRef}
         {...props}
       >
-        {children}
+        {cards}
       </div>
-      <div className="custom-scrollbars__scrollbar">
+      <div className="custom-scrollbars__scrollbar horizontal">
         <button
           className="custom-scrollbars__button"
-          onClick={() => handleScrollButton("up")}
+          onClick={() => handleScrollButton("left")}
         >
           ⇑
         </button>
@@ -179,14 +177,14 @@ const Scrollbar = ({
             ref={scrollThumbRef}
             onMouseDown={handleThumbMousedown}
             style={{
-              height: `${thumbHeight}px`,
+              height: `${thumbWidth}px`,
               cursor: isDragging ? "grabbing" : "grab",
             }}
           ></div>
         </div>
         <button
           className="custom-scrollbars__button"
-          onClick={() => handleScrollButton("down")}
+          onClick={() => handleScrollButton("right")}
         >
           ⇓
         </button>
@@ -195,4 +193,4 @@ const Scrollbar = ({
   );
 };
 
-export default Scrollbar;
+export default ScrollbarHorizontal;
