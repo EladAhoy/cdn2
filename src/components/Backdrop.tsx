@@ -56,6 +56,10 @@ export default function Backdrop({
       case "redwoodBlog":
         // return goToSite(customComponent);
         return <MediaCard />;
+      case "aicLookup":
+        return <MediaCard link="https://www.youtube.com/embed/ZXMQVSZYw-k" />;
+      case "displayContent":
+        return <MediaCard link="https://www.youtube.com/embed/fG4sb2Q4fRQ" />;
       default:
         return "";
     }

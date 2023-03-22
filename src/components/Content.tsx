@@ -12,17 +12,52 @@ import { Provider } from "react-redux";
 import React from "react";
 import { FixMeLater } from "../types/general";
 
-function renderCards({ gifsData }: FixMeLater) {
+function chunkArray(array: FixMeLater, chunkSize: number) {
+  const chunks = [];
+  let i = 0;
+
+  while (i < array.length) {
+    chunks.push(array.slice(i, i + chunkSize));
+    i += chunkSize;
+  }
+
+  return chunks;
+}
+
+function renderSections({ gifsData }: FixMeLater) {
+  const cardsSchema = SchemaService.getCardsSchema;
+  const maxNumberOfCardsInRow = 4;
+  const chunkedArray = chunkArray(cardsSchema, maxNumberOfCardsInRow);
+  const sections = chunkedArray.map((item, index) => (
+    <section key={index} className="cards">
+      {renderCardsFromArr({ gifsData, item })}
+    </section>
+  ));
+  return <article className="cards-container">{sections}</article>;
+}
+
+function renderCardsFromArr({ gifsData, item }: FixMeLater) {
   if (!gifsData || !gifsData?.gifs) return;
   const {
     gifs: { data },
   } = gifsData;
-  const cardsSchema = SchemaService.getCardsSchema;
-  const cards = cardsSchema?.map((item, index) => (
+  const cards = item?.map((item: FixMeLater, index: number) => (
     <BusinessCard key={index} item={item} gifData={data[index]} />
   ));
   return cards;
 }
+
+// function renderCards({ gifsData }: FixMeLater) {
+//   if (!gifsData || !gifsData?.gifs) return;
+//   const {
+//     gifs: { data },
+//   } = gifsData;
+//   const cardsSchema = SchemaService.getCardsSchema;
+//   const cards = cardsSchema?.map((item, index) => (
+//     <BusinessCard key={index} item={item} gifData={data[index]} />
+//   ));
+//   return cards;
+// }
 
 function validateGifsHeight({ gifs }: FixMeLater) {
   if (!gifs || !gifs?.data) return;
@@ -74,7 +109,7 @@ export default function Content() {
             customComponent={state?.customComponent || "funFacts"}
             noButton={true}
           ></Backdrop>
-          <section className="cards">{renderCards({ gifsData })}</section>
+          {renderSections({ gifsData })}
         </MyContext.Provider>
       </main>
     </Provider>
