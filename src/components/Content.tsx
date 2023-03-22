@@ -9,7 +9,6 @@ import { SchemaService } from "../services/schemaService";
 import { GifService } from "../services/gifService";
 import { store } from "../configure-store";
 import { Provider } from "react-redux";
-import ScrollbarHorizontal from "./scrollbar-horizontal/ScrollBarHorizontal";
 import React from "react";
 import { FixMeLater } from "../types/general";
 
@@ -75,9 +74,9 @@ export default function Content() {
             customComponent={state?.customComponent || "funFacts"}
             noButton={true}
           ></Backdrop>
-          <ScrollbarHorizontal cards={renderCards({ gifsData })}>
-            {/* <section className="cards">{renderCards({ gifsData })}</section> */}
-          </ScrollbarHorizontal>
+          {/*<ScrollbarHorizontal cards={renderCards({ gifsData })}>*/}
+          <section className="cards">{renderCards({ gifsData })}</section>
+          {/*</ScrollbarHorizontal>*/}
         </MyContext.Provider>
       </main>
     </Provider>
