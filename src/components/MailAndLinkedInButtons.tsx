@@ -25,24 +25,10 @@ export default function MailAndLinkedInButtons(props?: FixMeLater) {
 
   function goToGit() {
     const { gitRef } = props;
-    const { gitName } = gitRef;
+    const { gitLink } = gitRef;
     let link;
     const srcLink = "https://github.com/ShesdevSoftwareDevelopment/cdn2";
-    const redwoodLink =
-      "https://github.com/ShesdevSoftwareDevelopment/redwoodjs-blog";
-    switch (gitName) {
-      case "mockCheckout":
-        link = srcLink + "/blob/shesdev/src/components/CheckoutPage.js";
-        break;
-      case "sendTokens":
-        link = srcLink + "/blob/shesdev/src/components/SendTokens.js";
-        break;
-      case "redwoodBlog":
-        link = redwoodLink;
-        break;
-      default:
-        link = srcLink;
-    }
+    link = gitLink ?? srcLink;    
     window.location.href = link;
   }
   const goToLinkedin = () => {

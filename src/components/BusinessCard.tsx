@@ -32,7 +32,7 @@ function Card(props?: FixMeLater) {
         <h4 className="role">{item?.role}</h4>
         <MailAndLinkedInButtons
           style={{ opacity: 1 }}
-          gitRef={{ gitName: item?.gitName }}
+          gitRef={{ gitName: item?.gitName, gitLink: item?.gitLink }}
           type={item?.type}
         />
       </section>
