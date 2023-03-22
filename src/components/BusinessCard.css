@@ -117,6 +117,7 @@
   .business-card-container {
     width: unset;
     max-width: 90vw;
+    max-height: 70vh;
     scroll-snap-align: center;
     /* transform: rotateX(180deg); */
   }
@@ -128,6 +129,12 @@
 
   .business-card-container :is(.about) {
     padding-block-end: 7rem;
+    overflow: scroll;
+  }
+
+  .business-card-container :is(.about__text) {
+    max-height: 40vh;
+    overflow: scroll;
   }
 
 }
