@@ -2,7 +2,6 @@ import "./BusinessCard.css";
 import ProfilePic from "./ProfilePic";
 import MailAndLinkedInButtons from "./MailAndLinkedInButtons";
 import "animate.css";
-import Scrollbar from "./scrollbar/ScrollBar";
 import React from "react";
 import { FixMeLater } from "../types/general";
 
@@ -41,9 +40,7 @@ function Card(props?: FixMeLater) {
       <section className="about">
         <h3 className="about__header">{item?.aboutHeader}</h3>
         {isMobile ? (
-          <Scrollbar>
-            <p className="about__text">{item?.aboutText}</p>
-          </Scrollbar>
+          <p className="about__text">{item?.aboutText}</p>
         ) : (
           <p className="about__text">{item?.aboutText}</p>
         )}
