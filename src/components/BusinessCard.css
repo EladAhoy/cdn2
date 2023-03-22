@@ -127,11 +127,13 @@
     transform: rotateX(180deg);
   } */
 
+  .business-card-container-left :is(.about),
   .business-card-container :is(.about) {
-    padding-block-end: 7rem;
+    /* padding-block-end: 7rem; */
     overflow: scroll;
   }
 
+  .business-card-container-left :is(.about__text),
   .business-card-container :is(.about__text) {
     max-height: 40vh;
     overflow: scroll;
