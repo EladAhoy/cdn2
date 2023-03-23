@@ -39,6 +39,19 @@ export class SchemaService {
       classNameList: "business-card-container-left",
     },
     {
+      id: 10,
+      type: "marketialForm",
+      picSrc: "",
+      name: "Marketial Form",
+      role: "PHP, Javascript, HTML, CSS",
+      gitName: "form",
+      gitLink: "https://github.com/shes-dev/Form",
+      aboutHeader: "About",
+      aboutText:
+        "A form used for marketial purposes. The form is built with PHP and Javascript. The data is saved in the database and a pdf summary is sent to the customer after submit.",
+      classNameList: "business-card-container-left",
+    },
+    {
       id: 2,
       type: "mockCheckout",
       picSrc: "ticket",
