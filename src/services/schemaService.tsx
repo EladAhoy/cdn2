@@ -152,6 +152,57 @@ export class SchemaService {
       aboutText: "Wordpress demo site built with Elementor.",
       classNameList: "business-card-container-left",
     },
+    {
+      id: 12,
+      type: "w3portfolio",
+      picSrc: "",
+      name: "Portfolio",
+      role: "PHP,JQuery, W3",
+      gitName: "",
+      gitLink: "https://github.com/shes-dev",
+      aboutHeader: "About",
+      aboutText: "Portfolio styled using W3 component library.",
+      classNameList: "business-card-container-left",
+    },
+    {
+      id: 13,
+      type: "practice",
+      picSrc: "",
+      name: "Track Practices",
+      role: "PHP,HMTL,CSS,JS",
+      gitName: "practice",
+      gitLink: "https://github.com/shes-dev/Practice",
+      aboutHeader: "About",
+      aboutText:
+        "This site allows monitoring of the amount of questions solved by students in different fields. It has a signup and login system, where students can input data. Questions are also available in a different section",
+      classNameList: "business-card-container-left",
+    },
+    {
+      id: 14,
+      type: "hebrewWords",
+      picSrc: "",
+      name: "Words Trivia",
+      role: "PHP,W3,HMTL,CSS,JS",
+      gitName: "hebrewWords",
+      gitLink: "https://github.com/shes-dev/PracticeIT",
+      aboutHeader: "About",
+      aboutText:
+        "This site allows learning all needed hebrew words for the Psychometric exam. It has a comments section, where students can ask questions and get answers from other students.",
+      classNameList: "business-card-container-left",
+    },
+    {
+      id: 15,
+      type: "questionsCms",
+      picSrc: "",
+      name: "Questions CMS",
+      role: "PHP,W3,HMTL,CSS,JS",
+      gitName: "questionsCms",
+      gitLink: "https://github.com/shes-dev/PracticeMath",
+      aboutHeader: "About",
+      aboutText:
+        "This site allows questions in different formats - text, image, audio and video. Questions and answers are displayed with drop down options. Teachers who want to display their content in a more exiciting manner can use this site.",
+      classNameList: "business-card-container-left",
+    },
   ];
   static get getCardsSchema() {
     return this.cardsSchema;

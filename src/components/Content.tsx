@@ -77,7 +77,9 @@ export default function Content() {
   const [gifsData, setGifsData] = useState(null);
 
   useEffect(() => {
-    const timer = setTimeout(() => setshowToast(false), 8800);
+    const isMobile = window.innerWidth < 768;
+    const fadeOutDuration = isMobile ? 5800 : 8800;
+    const timer = setTimeout(() => setshowToast(false), fadeOutDuration);
     return () => clearTimeout(timer);
   }, []);
 
