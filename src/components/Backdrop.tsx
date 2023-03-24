@@ -29,17 +29,25 @@ export default function Backdrop({
     return response;
   };
 
-  // const goToSite = (customComponent) => {
-  //   let link;
-  //   switch (customComponent) {
-  //     case 'redwoodBlog':
-  //       link = 'https://redwoodjs-blog-shesdev.netlify.app/';
-  //       window.location.href = link;
-  //       break;
-  //     default:
-  //       return;
-  //   }
-  // };
+  const goToSite = (customComponent: FixMeLater) => {
+    let link: string;
+    switch (customComponent) {
+      case "explainit":
+        link = "https://www.explainit.online/";
+        window.location.href = link;
+        break;
+      case "1000ish":
+        link = "https://1000ish.explainit.online/";
+        window.location.href = link;
+        break;
+      case "wordpressDemoStore":
+        link = "https://fiveminutes.explainit.online/";
+        window.location.href = link;
+        break;
+      default:
+        return;
+    }
+  };
 
   const getComponent = () => {
     switch (state?.customComponent) {
@@ -54,7 +62,6 @@ export default function Backdrop({
       case "counter":
         return <Container />;
       case "redwoodBlog":
-        // return goToSite(customComponent);
         return <MediaCard />;
       case "aicLookup":
         return <MediaCard link="https://www.youtube.com/embed/ZXMQVSZYw-k" />;
@@ -62,14 +69,23 @@ export default function Backdrop({
         return <MediaCard link="https://www.youtube.com/embed/fG4sb2Q4fRQ" />;
       case "marketialForm":
         return <MediaCard link="https://www.youtube.com/embed/ufDdRHGMB1s" />;
+      case "explainit":
+      case "1000ish":
+      case "wordpressDemoStore":
+        return goToSite(state?.customComponent);
       default:
         return "";
     }
   };
 
   const renderCloseButton = () => {
-    // return state?.customComponent === 'redwoodBlog' ? '' : <button onClick={handleClick}>Close</button>;
-    return <button onClick={handleClick}>Close</button>;
+    return ["explainit", "1000ish", "wordpressDemoStore"].includes(
+      state?.customComponent
+    ) ? (
+      ""
+    ) : (
+      <button onClick={handleClick}>Close</button>
+    );
   };
 
   return (
