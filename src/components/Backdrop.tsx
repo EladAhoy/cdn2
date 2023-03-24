@@ -29,17 +29,43 @@ export default function Backdrop({
     return response;
   };
 
-  // const goToSite = (customComponent) => {
-  //   let link;
-  //   switch (customComponent) {
-  //     case 'redwoodBlog':
-  //       link = 'https://redwoodjs-blog-shesdev.netlify.app/';
-  //       window.location.href = link;
-  //       break;
-  //     default:
-  //       return;
-  //   }
-  // };
+  const goToSite = (customComponent: FixMeLater) => {
+    let link: string;
+    switch (customComponent) {
+      case "explainit":
+        link = "https://www.explainit.online/";
+        window.location.href = link;
+        break;
+      case "1000ish":
+        link = "https://1000ish.explainit.online/";
+        window.location.href = link;
+        break;
+      case "wordpressDemoStore":
+        link = "https://fiveminutes.explainit.online/";
+        window.location.href = link;
+        break;
+      case "w3portfolio":
+        link = "https://elad.explainit.online/";
+        window.location.href = link;
+        break;
+      case "practice":
+        link = "https://www.explainit.online/s/practice/s1/content/s10.php";
+        window.location.href = link;
+        break;
+      case "hebrewWords":
+        link =
+          "https://www.explainit.online/s/practiceit.xyz/s1/psychometric/questions_10/index.php";
+        window.location.href = link;
+        break;
+      case "questionsCms":
+        link =
+          "https://www.explainit.online/s/practicemath/s1/math/questions_031/index.php";
+        window.location.href = link;
+        break;
+      default:
+        return;
+    }
+  };
 
   const getComponent = () => {
     switch (state?.customComponent) {
@@ -54,7 +80,6 @@ export default function Backdrop({
       case "counter":
         return <Container />;
       case "redwoodBlog":
-        // return goToSite(customComponent);
         return <MediaCard />;
       case "aicLookup":
         return <MediaCard link="https://www.youtube.com/embed/ZXMQVSZYw-k" />;
@@ -62,14 +87,33 @@ export default function Backdrop({
         return <MediaCard link="https://www.youtube.com/embed/fG4sb2Q4fRQ" />;
       case "marketialForm":
         return <MediaCard link="https://www.youtube.com/embed/ufDdRHGMB1s" />;
+      case "explainit":
+      case "1000ish":
+      case "wordpressDemoStore":
+      case "w3portfolio":
+      case "practice":
+      case "hebrewWords":
+      case "questionsCms":
+        return goToSite(state?.customComponent);
       default:
         return "";
     }
   };
 
   const renderCloseButton = () => {
-    // return state?.customComponent === 'redwoodBlog' ? '' : <button onClick={handleClick}>Close</button>;
-    return <button onClick={handleClick}>Close</button>;
+    return [
+      "explainit",
+      "1000ish",
+      "wordpressDemoStore",
+      "w3portfolio",
+      "practice",
+      "hebrewWords",
+      "questionsCms",
+    ].includes(state?.customComponent) ? (
+      ""
+    ) : (
+      <button onClick={handleClick}>Close</button>
+    );
   };
 
   return (
