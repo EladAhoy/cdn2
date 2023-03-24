@@ -11,12 +11,14 @@ import { store } from "../configure-store";
 import { Provider } from "react-redux";
 import React from "react";
 import { FixMeLater } from "../types/general";
+import "animate.css";
 
 function chunkArray(array: FixMeLater, chunkSize: number) {
   const chunks = [];
   let i = 0;
 
   while (i < array.length) {
+    // @ts-ignore
     chunks.push(array.slice(i, i + chunkSize));
     i += chunkSize;
   }
@@ -47,18 +49,6 @@ function renderCardsFromArr({ gifsData, item }: FixMeLater) {
   return cards;
 }
 
-// function renderCards({ gifsData }: FixMeLater) {
-//   if (!gifsData || !gifsData?.gifs) return;
-//   const {
-//     gifs: { data },
-//   } = gifsData;
-//   const cardsSchema = SchemaService.getCardsSchema;
-//   const cards = cardsSchema?.map((item, index) => (
-//     <BusinessCard key={index} item={item} gifData={data[index]} />
-//   ));
-//   return cards;
-// }
-
 function validateGifsHeight({ gifs }: FixMeLater) {
   if (!gifs || !gifs?.data) return;
   const { data } = gifs;
@@ -87,10 +77,8 @@ export default function Content() {
 
   useEffect(() => {
     async function fetchGifs() {
-      // const hello = await GifService.getHello();
-      // console.log({ hello });
-      const getGifsData = await GifService.getGifsData();
-      console.log({ getGifsData });
+      // const getGifsData = await GifService.getGifsData();
+      // console.log({ getGifsData });
       const gifs = await GifService.getGifs();
       validateGifsHeight({ gifs });
       //@ts-ignore
