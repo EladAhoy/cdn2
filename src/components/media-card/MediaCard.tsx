@@ -4,7 +4,6 @@ import { FixMeLater } from "../../types/general";
 var Spinner = require("react-spinkit");
 
 export default function MediaCard({ link, component }: FixMeLater) {
-  const showSpinner = ["redwoodBlog"].includes(component);
   const [showPic, setShowPic] = useState(true);
 
   const hideSpinner = () => {
@@ -23,7 +22,7 @@ export default function MediaCard({ link, component }: FixMeLater) {
             fadeIn="none"
           />
         ) : null}
-        {showSpinner && link && (
+        {link && (
           <iframe
             src={link}
             width={1000}
