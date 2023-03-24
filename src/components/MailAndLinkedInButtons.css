@@ -4,7 +4,7 @@ section.buttons-container {
   gap: 2rem;
   text-align: center;
   min-height: 2.5rem;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 section.buttons-container button {
@@ -30,7 +30,11 @@ section.buttons-container button.linked-in {
 
 @media only screen and (max-width: 767px) {
   section.buttons-container {
-    gap: 0rem;
+    gap: 1rem;
+  }
+
+  section.buttons-container button {
+    min-width: 8rem;
   }
 
   section.buttons-container {
