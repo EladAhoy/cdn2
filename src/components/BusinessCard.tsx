@@ -15,9 +15,7 @@ function Card(props?: FixMeLater) {
 
   return (
     <article
-      className={
-        isMobile ? item?.desktopClassNameList : item?.desktopClassNameList
-      }
+      className={isMobile ? item?.classNameList : item?.desktopClassNameList}
     >
       <section className="profile_pic">
         <div className="business-card__profile-pic-container">
