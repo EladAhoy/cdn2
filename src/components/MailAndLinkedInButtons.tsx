@@ -18,7 +18,7 @@ export default function MailAndLinkedInButtons(props?: FixMeLater) {
         <button className="email" onClick={goToGit}>
           <CustomIcon type="git" /> Git
         </button>
-        <Backdrop customComponent={type}></Backdrop>
+        <Backdrop customComponent={type} onlyButton={true}></Backdrop>
       </section>
     );
   }

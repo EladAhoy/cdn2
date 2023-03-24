@@ -6,9 +6,9 @@
    }
 
    @media only screen and (max-width: 767px) {
-     iframe.MuiCardMedia-root.MuiCardMedia-media {
-       min-width: unset;
-       min-height: unset;
-       width: unset;
+     .container.rsvp-wrapper {
+       display: flex;
+       flex-direction: column;
+       place-items: center;
      }
    }

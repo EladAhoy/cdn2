@@ -15,6 +15,7 @@ export default function Backdrop({
   children,
   customComponent,
   noButton,
+  onlyButton,
 }: FixMeLater) {
   const { state, dispatch }: FixMeLater = useContext(MyContext);
   const handleClick = () =>
@@ -24,7 +25,7 @@ export default function Backdrop({
   };
 
   const renderClasses = () => {
-    let response;
+    let response: FixMeLater;
     response = state.clicked ? "backdrop-container open" : "backdrop-container";
     return response;
   };
@@ -80,7 +81,12 @@ export default function Backdrop({
       case "counter":
         return <Container />;
       case "redwoodBlog":
-        return <MediaCard />;
+        return (
+          <MediaCard
+            link="https://www.youtube.com/embed/Zk1NfO_LCFU"
+            component="redwoodBlog"
+          />
+        );
       case "aicLookup":
         return <MediaCard link="https://www.youtube.com/embed/ZXMQVSZYw-k" />;
       case "displayContent":
@@ -116,7 +122,9 @@ export default function Backdrop({
     );
   };
 
-  return (
+  return onlyButton ? (
+    <section className="backdrop-container">{renderButton()}</section>
+  ) : (
     <>
       <section className={renderClasses()}>
         {renderButton()}
