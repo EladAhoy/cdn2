@@ -7,7 +7,7 @@ section.buttons-container {
   justify-content: space-between;
 }
 
-section.buttons-container button {
+section.buttons-container :is(button, a) {
   min-width: 9rem;
   min-height: 2.5rem;
   font-size: 1rem;
@@ -21,6 +21,10 @@ section.buttons-container button {
   justify-content: center;
   cursor: pointer;
   color: black;
+}
+
+a {
+  text-decoration: none;
 }
 
 section.buttons-container button.linked-in {

@@ -6,29 +6,41 @@ import Backdrop from "./Backdrop";
 import React from "react";
 import { FixMeLater } from "../types/general";
 
-export default function MailAndLinkedInButtons(props?: FixMeLater) {
-  if (props?.style?.opacity === 0)
-    return <section className="buttons-container"></section>;
+const renderBackdropOrOpenExternalLink = ({
+  type,
+  externalLink,
+}: FixMeLater) => {
+  return externalLink ? (
+    <a href={externalLink}>Open</a>
+  ) : (
+    <Backdrop customComponent={type} onlyButton={true}></Backdrop>
+  );
+};
 
-  if (props?.gitRef && props?.type && props?.type !== "profile") {
-    const { type } = props;
+export default function MailAndLinkedInButtons({
+  style,
+  gitRef,
+  type,
+  externalLink,
+}: FixMeLater) {
+  if (style === 0) return <section className="buttons-container"></section>;
 
+  if (gitRef && type && type !== "profile") {
     return (
       <section className="buttons-container">
         <button className="email" onClick={goToGit}>
           <CustomIcon type="git" /> Git
         </button>
-        <Backdrop customComponent={type} onlyButton={true}></Backdrop>
+        {renderBackdropOrOpenExternalLink({ type, externalLink })}
       </section>
     );
   }
 
   function goToGit() {
-    const { gitRef } = props;
     const { gitLink } = gitRef;
-    let link;
+    let link: FixMeLater;
     const srcLink = "https://github.com/ShesdevSoftwareDevelopment/cdn2";
-    link = gitLink ?? srcLink;    
+    link = gitLink ?? srcLink;
     window.location.href = link;
   }
   const goToLinkedin = () => {

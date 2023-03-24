@@ -123,6 +123,7 @@ export class SchemaService {
       role: "PHP, MySql, Javascript, HTML, CSS",
       gitName: "explainit",
       gitLink: "https://github.com/shes-dev/ExplainIt",
+      externalLink: "https://www.explainit.online/",
       aboutHeader: "About",
       aboutText:
         "As a Full Stack Developer at Explainit, I led the development of a platform that enabled YouTube influencers to offer online courses for sale to their subscribers. This platform used the LAMP stack, with a big emphasis on security. One of the key features of the platform was that videos were available to watch only from allowed IP addresses, ensuring that the content was protected and only accessible to paying customers. I also designed and implemented a login system from scratch, ensuring that user data was kept secure. The platform had both end customers and YouTube influencers as clients, and I worked closely with a team of designers to ensure that the platform met the needs of both groups. I also collaborated with other developers to integrate third-party services and APIs, such as payment gateways and email marketing tools. Overall, my experience at Explainit taught me how to develop a complex platform from scratch using the LAMP stack, with a strong emphasis on security and a focus on meeting the needs of both end customers and influencers. I gained valuable experience in full-stack development, project management, and collaboration, and I am excited to bring these skills to my next challenge.",
@@ -136,6 +137,7 @@ export class SchemaService {
       role: "PHP, MySql, Javascript, HTML, CSS",
       gitName: "1000ish",
       gitLink: "https://github.com/shes-dev/1000ish",
+      externalLink: "https://1000ish.explainit.online/",
       aboutHeader: "About",
       aboutText: "Displays Math and Physics questions by subjects.",
       classNameList: "business-card-container-left",
@@ -148,6 +150,7 @@ export class SchemaService {
       role: "WordPress, PHP",
       gitName: "",
       gitLink: "https://github.com/shes-dev",
+      externalLink: "https://fiveminutes.explainit.online/",
       aboutHeader: "About",
       aboutText: "Wordpress demo site built with Elementor.",
       classNameList: "business-card-container-left",
@@ -160,6 +163,7 @@ export class SchemaService {
       role: "PHP,JQuery, W3",
       gitName: "",
       gitLink: "https://github.com/shes-dev",
+      externalLink: "https://elad.explainit.online/",
       aboutHeader: "About",
       aboutText: "Portfolio styled using W3 component library.",
       classNameList: "business-card-container-left",
@@ -172,6 +176,8 @@ export class SchemaService {
       role: "PHP,HMTL,CSS,JS",
       gitName: "practice",
       gitLink: "https://github.com/shes-dev/Practice",
+      externalLink:
+        "https://www.explainit.online/s/practice/s1/content/s10.php",
       aboutHeader: "About",
       aboutText:
         "This site allows monitoring of the amount of questions solved by students in different fields. It has a signup and login system, where students can input data. Questions are also available in a different section",
@@ -185,6 +191,8 @@ export class SchemaService {
       role: "PHP,W3,HMTL,CSS,JS",
       gitName: "hebrewWords",
       gitLink: "https://github.com/shes-dev/PracticeIT",
+      externalLink:
+        "https://www.explainit.online/s/practiceit.xyz/s1/psychometric/questions_10/index.php",
       aboutHeader: "About",
       aboutText:
         "This site allows learning all needed hebrew words for the Psychometric exam. It has a comments section, where students can ask questions and get answers from other students.",
@@ -198,6 +206,8 @@ export class SchemaService {
       role: "PHP,W3,HMTL,CSS,JS",
       gitName: "questionsCms",
       gitLink: "https://github.com/shes-dev/PracticeMath",
+      externalLink:
+        "https://www.explainit.online/s/practicemath/s1/math/questions_031/index.php",
       aboutHeader: "About",
       aboutText:
         "This site allows questions in different formats - text, image, audio and video. Questions and answers are displayed with drop down options. Teachers who want to display their content in a more exiciting manner can use this site.",
