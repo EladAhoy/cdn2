@@ -142,5 +142,6 @@
   .business-card-container-left :is(.about__text),
   .business-card-container :is(.about__text) {
     max-height: 40vh;
+    padding-inline: 1rem;
   }
 }
