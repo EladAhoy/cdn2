@@ -39,14 +39,6 @@
      }
 
      .sk-spinner.loading.text-center {
-       color: white;
-       position: absolute;
-       z-index: 3;
-       top: 0;
-       bottom: 0;
-       margin: auto;
-       left: 0;
-       right: 0;
-       text-align: center;
+       top: 1rem;
      }
    }
