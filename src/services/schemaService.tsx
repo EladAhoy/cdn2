@@ -10,8 +10,9 @@ export class SchemaService {
       aboutHeader: "About",
       aboutText:
         "Developing since 2015. Originaly LAMP stack, continued to MERN and MEVN following market demand.My last adventure included Ahoy!, an online yacht insurance platform for the US market.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 8,
@@ -24,8 +25,9 @@ export class SchemaService {
       aboutHeader: "About",
       aboutText:
         "AIC Lookup is a web app that allows users to search for an artist by name and get back a list of artworks that match the search term. The user needs to login. The app uses the AIC API to get the data.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 9,
@@ -38,8 +40,9 @@ export class SchemaService {
       aboutHeader: "About",
       aboutText:
         "Displays course notes summary, allowed additional data uploading and comments via plugin.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 10,
@@ -52,8 +55,9 @@ export class SchemaService {
       aboutHeader: "About",
       aboutText:
         "A form used for marketial purposes. The form is built with PHP and Javascript. The data is saved in the database and a pdf summary is sent to the customer after submit.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 2,
@@ -67,8 +71,9 @@ export class SchemaService {
       aboutHeader: "Task",
       aboutText:
         "Create a mock checkout page for buying tickets to a show. Users should have the ability to select a show from a list of upcoming shows, select the quantity, enter their basic billing information (you don't need to actually accept real credit card data, just simulate how this part should work), and see their final cost with fees before checking out.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 3,
@@ -80,8 +85,9 @@ export class SchemaService {
       aboutHeader: "Task",
       aboutText:
         "Create an dropdown menu that gets a JSON object as input, and uses recursion to include nested dropdown menus as needed. No need to handle overlapping issues.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 4,
@@ -95,8 +101,9 @@ export class SchemaService {
       aboutHeader: "Task",
       aboutText:
         "Create an ETH payment gateway. Include connection to MetaMask and a tool to check if an ETH address is valid.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 5,
@@ -107,8 +114,9 @@ export class SchemaService {
       gitName: "sendTokens",
       aboutHeader: "Task",
       aboutText: "Create a counter.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 6,
@@ -121,8 +129,9 @@ export class SchemaService {
       aboutHeader: "Stack",
       aboutText:
         "React, Jamstack, GraphQL, Prisma, TypeScript, Jest, Storybook, deployed on Netlify.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 7,
@@ -136,8 +145,9 @@ export class SchemaService {
       aboutHeader: "About",
       aboutText:
         "As a Full Stack Developer at Explainit, I led the development of a platform that enabled YouTube influencers to offer online courses for sale to their subscribers. This platform used the LAMP stack, with a big emphasis on security. One of the key features of the platform was that videos were available to watch only from allowed IP addresses, ensuring that the content was protected and only accessible to paying customers. I also designed and implemented a login system from scratch, ensuring that user data was kept secure. The platform had both end customers and YouTube influencers as clients, and I worked closely with a team of designers to ensure that the platform met the needs of both groups. I also collaborated with other developers to integrate third-party services and APIs, such as payment gateways and email marketing tools. Overall, my experience at Explainit taught me how to develop a complex platform from scratch using the LAMP stack, with a strong emphasis on security and a focus on meeting the needs of both end customers and influencers. I gained valuable experience in full-stack development, project management, and collaboration, and I am excited to bring these skills to my next challenge.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 11,
@@ -150,8 +160,9 @@ export class SchemaService {
       externalLink: "https://1000ish.explainit.online/",
       aboutHeader: "About",
       aboutText: "Displays Math and Physics questions by subjects.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 12,
@@ -164,8 +175,9 @@ export class SchemaService {
       externalLink: "https://fiveminutes.explainit.online/",
       aboutHeader: "About",
       aboutText: "Wordpress demo site built with Elementor.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 12,
@@ -178,8 +190,9 @@ export class SchemaService {
       externalLink: "https://elad.explainit.online/",
       aboutHeader: "About",
       aboutText: "Portfolio styled using W3 component library.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 13,
@@ -194,8 +207,9 @@ export class SchemaService {
       aboutHeader: "About",
       aboutText:
         "This site allows monitoring of the amount of questions solved by students in different fields. It has a signup and login system, where students can input data. Questions are also available in a different section",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 14,
@@ -210,8 +224,9 @@ export class SchemaService {
       aboutHeader: "About",
       aboutText:
         "This site allows learning all needed hebrew words for the Psychometric exam. It has a comments section, where students can ask questions and get answers from other students.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
     {
       id: 15,
@@ -226,8 +241,9 @@ export class SchemaService {
       aboutHeader: "About",
       aboutText:
         "This site allows questions in different formats - text, image, audio and video. Questions and answers are displayed with drop down options. Teachers who want to display their content in a more exiciting manner can use this site.",
-      classNameList:
-        "business-card-container-left animate__animated animate__fadeInUp",
+      classNameList: "business-card-container-left",
+      desktopClassNameList:
+        "business-card-container-left animate__animated animate__fadeIn",
     },
   ];
   static get getCardsSchema() {
