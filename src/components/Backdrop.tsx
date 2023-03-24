@@ -44,6 +44,24 @@ export default function Backdrop({
         link = "https://fiveminutes.explainit.online/";
         window.location.href = link;
         break;
+      case "w3portfolio":
+        link = "https://elad.explainit.online/";
+        window.location.href = link;
+        break;
+      case "practice":
+        link = "https://www.explainit.online/s/practice/s1/content/s10.php";
+        window.location.href = link;
+        break;
+      case "hebrewWords":
+        link =
+          "https://www.explainit.online/s/practiceit.xyz/s1/psychometric/questions_10/index.php";
+        window.location.href = link;
+        break;
+      case "questionsCms":
+        link =
+          "https://www.explainit.online/s/practicemath/s1/math/questions_031/index.php";
+        window.location.href = link;
+        break;
       default:
         return;
     }
@@ -72,6 +90,10 @@ export default function Backdrop({
       case "explainit":
       case "1000ish":
       case "wordpressDemoStore":
+      case "w3portfolio":
+      case "practice":
+      case "hebrewWords":
+      case "questionsCms":
         return goToSite(state?.customComponent);
       default:
         return "";
@@ -79,9 +101,15 @@ export default function Backdrop({
   };
 
   const renderCloseButton = () => {
-    return ["explainit", "1000ish", "wordpressDemoStore"].includes(
-      state?.customComponent
-    ) ? (
+    return [
+      "explainit",
+      "1000ish",
+      "wordpressDemoStore",
+      "w3portfolio",
+      "practice",
+      "hebrewWords",
+      "questionsCms",
+    ].includes(state?.customComponent) ? (
       ""
     ) : (
       <button onClick={handleClick}>Close</button>

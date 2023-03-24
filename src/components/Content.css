@@ -22,11 +22,16 @@ section.shows {
 }
 
 @media only screen and (max-width: 767px) {
+  .cards-container {
+    gap: 0
+  }
+
   main.content {
     padding-block-start: 1rem;
   }
 
   main.content section.cards {
+    padding: 1rem;
     gap: 1rem;
     /* transform: rotateX(180deg); */
     overflow-x: auto;
