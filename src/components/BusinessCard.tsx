@@ -14,7 +14,11 @@ function Card(props?: FixMeLater) {
   const isMobile = window.innerWidth < 768;
 
   return (
-    <article className={item?.classNameList}>
+    <article
+      className={
+        isMobile ? item?.desktopClassNameList : item?.desktopClassNameList
+      }
+    >
       <section className="profile_pic">
         <div className="business-card__profile-pic-container">
           <ProfilePic
