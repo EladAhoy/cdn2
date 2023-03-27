@@ -4,6 +4,7 @@ main.content {
   padding-block-start: 2rem;
   padding-block-end: 6rem;
   color: white;
+  margin: auto;
 }
 
 main.content section.cards {
@@ -28,19 +29,13 @@ section.shows {
 
   main.content {
     padding-block-start: 1rem;
+    margin: initial;
   }
 
   main.content section.cards {
     padding: 1rem;
     gap: 1rem;
-    /* transform: rotateX(180deg); */
     overflow-x: auto;
-    /* allows side card scrolling*/
-    /* flex-direction: column; */
-    /*return to remove side scrolling space   */
-    /* overflow: unset; */
-
-    /*Snapping on horizontal scrolling*/
     scroll-snap-type: x mandatory;
     overflow-x: scroll;
     scroll-behavior: smooth;

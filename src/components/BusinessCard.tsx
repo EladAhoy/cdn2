@@ -1,7 +1,6 @@
 import "./BusinessCard.css";
 import ProfilePic from "./ProfilePic";
 import MailAndLinkedInButtons from "./MailAndLinkedInButtons";
-import "animate.css";
 import React from "react";
 import { FixMeLater } from "../types/general";
 
