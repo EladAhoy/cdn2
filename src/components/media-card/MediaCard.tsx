@@ -1,13 +1,38 @@
 import "./MediaCard.css";
-import CardMedia from "@mui/material/CardMedia";
-import React from "react";
+import React, { useState } from "react";
 import { FixMeLater } from "../../types/general";
+var Spinner = require("react-spinkit");
 
-export default function MediaCard({ link }: FixMeLater) {
+export default function MediaCard({ link, component }: FixMeLater) {
+  const [showPic, setShowPic] = useState(true);
+
+  const hideSpinner = () => {
+    setShowPic(false);
+    console.log("loaded");
+  };
+
   return (
-    <CardMedia
-      component="iframe"
-      src={link ?? "https://www.youtube.com/embed/Zk1NfO_LCFU"}
-    ></CardMedia>
+    <>
+      <div className="container rsvp-wrapper">
+        {showPic ? (
+          <Spinner
+            className="loading text-center"
+            name="three-bounce"
+            color="white"
+            fadeIn="none"
+          />
+        ) : null}
+        {link && (
+          <iframe
+            src={link}
+            width={1000}
+            height={500}
+            loading="eager"
+            title="A youtube video"
+            onLoad={hideSpinner}
+          ></iframe>
+        )}
+      </div>
+    </>
   );
 }

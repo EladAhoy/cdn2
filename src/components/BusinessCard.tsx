@@ -34,6 +34,7 @@ function Card(props?: FixMeLater) {
           style={{ opacity: 1 }}
           gitRef={{ gitName: item?.gitName, gitLink: item?.gitLink }}
           type={item?.type}
+          externalLink={item?.externalLink}
         />
       </section>
 
