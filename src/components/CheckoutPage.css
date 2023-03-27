@@ -44,7 +44,8 @@ form button {
 }
 
 button:hover {
-  background-color: #3e8e41;
+  background-color: #5093E2;
+  color: white;
 }
 
 input[type="number"] {
