@@ -1,8 +1,10 @@
    iframe {
+     width: 100%;
      margin: auto;
      min-width: 50%;
      max-width: 90%;
      min-height: 75%;
+
      color: white;
      position: absolute;
      z-index: 3;
@@ -31,6 +33,10 @@
    }
 
    @media only screen and (max-width: 767px) {
+     iframe {
+       width: unset;
+     }
+
      .container.rsvp-wrapper {
        display: flex;
      }
