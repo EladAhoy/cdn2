@@ -3,23 +3,35 @@
      min-width: 50%;
      max-width: 90%;
      min-height: 75%;
-     transition: transform 5s ease-out;
+     color: white;
+     position: absolute;
+     z-index: 3;
+     top: 0;
+     bottom: 0;
+     margin: auto;
+     left: 0;
+     right: 0;
+     text-align: center;
+   }
+
+   .container.rsvp-wrapper {
+     display: flex;
+   }
+
+   .sk-spinner.loading.text-center {
+     color: white;
+     position: absolute;
+     z-index: 3;
+     top: 0;
+     bottom: 0;
+     margin: auto;
+     left: 0;
+     right: 0;
+     text-align: center;
    }
 
    @media only screen and (max-width: 767px) {
      .container.rsvp-wrapper {
        display: flex;
-     }
-
-     .sk-spinner.loading.text-center {
-       color: white;
-       position: absolute;
-       z-index: 3;
-       top: 0;
-       bottom: 0;
-       margin: auto;
-       left: 0;
-       right: 0;
-       text-align: center;
      }
    }
