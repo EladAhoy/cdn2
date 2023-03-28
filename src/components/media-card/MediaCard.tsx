@@ -13,25 +13,27 @@ export default function MediaCard({ link, component }: FixMeLater) {
 
   return (
     <>
-      <div className="container rsvp-wrapper">
-        {showPic ? (
-          <Spinner
-            className="loading text-center"
-            name="three-bounce"
-            color="white"
-            fadeIn="none"
-          />
-        ) : null}
-        {link && (
-          <iframe
-            src={link}
-            width={1000}
-            height={500}
-            loading="eager"
-            title="A youtube video"
-            onLoad={hideSpinner}
-          ></iframe>
-        )}
+      <div className="spinner-container">
+        <div className="container rsvp-wrapper">
+          {showPic ? (
+            <Spinner
+              className="loading text-center"
+              name="three-bounce"
+              color="white"
+              fadeIn="none"
+            />
+          ) : null}
+          {link && (
+            <iframe
+              src={link}
+              width={1000}
+              height={500}
+              loading="eager"
+              title="A youtube video"
+              onLoad={hideSpinner}
+            ></iframe>
+          )}
+        </div>
       </div>
     </>
   );
