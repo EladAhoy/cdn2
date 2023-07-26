@@ -14,7 +14,7 @@ import React from "react";
 import { FixMeLater } from "../types/general";
 import "animate.css";
 
-function chunkArray(array: FixMeLater, chunkSize: number) {
+function chunkArray({ array, chunkSize }: FixMeLater) {
   const chunks = [];
   let i = 0;
 
@@ -27,20 +27,51 @@ function chunkArray(array: FixMeLater, chunkSize: number) {
   return chunks;
 }
 
+const replaceNameWithBusinessName = ({
+  cardsSchema,
+  unknownMerchantsData,
+}: FixMeLater) => {
+  if (!cardsSchema || !unknownMerchantsData) return cardsSchema;
+  const { unknownMerchants } = unknownMerchantsData;
+  if (!unknownMerchants) return cardsSchema;
+  let newCardsSchema = cardsSchema.map(
+    (item: FixMeLater, index: FixMeLater) => {
+      item.name = unknownMerchants[index] || "removeItem";
+      return item;
+    }
+  );
+  newCardsSchema = newCardsSchema.filter(
+    (item: FixMeLater) => item.name !== "removeItem"
+  );
+  return newCardsSchema;
+};
+
 function renderSections({ gifsData, unknownMerchantsData }: FixMeLater) {
   console.log({ gifsData, unknownMerchantsData });
-  const cardsSchema = SchemaService.getCardsSchema;
+  let cardsSchema = SchemaService.getCardsSchema;
+  cardsSchema = replaceNameWithBusinessName({
+    cardsSchema,
+    unknownMerchantsData,
+  });
   const maxNumberOfCardsInRow = 4;
-  const chunkedArray = chunkArray(cardsSchema, maxNumberOfCardsInRow);
+  const chunkedArray = chunkArray({
+    array: cardsSchema,
+    chunkSize: maxNumberOfCardsInRow,
+  });
+  console.log({ chunkedArray });
   const sections = chunkedArray.map((item, index) => (
     <section key={index} className="cards">
-      {renderCardsFromArr({ gifsData, item })}
+      {renderCardsFromArr({ gifsData, item, unknownMerchantsData })}
     </section>
   ));
   return <article className="cards-container">{sections}</article>;
 }
 
-function renderCardsFromArr({ gifsData, item }: FixMeLater) {
+function renderCardsFromArr({
+  gifsData,
+  item,
+  unknownMerchantsData = [],
+}: FixMeLater) {
   if (!gifsData || !gifsData?.gifs) return;
   const {
     gifs: { data },
