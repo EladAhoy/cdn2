@@ -17,7 +17,8 @@
   font-weight: 700;
   letter-spacing: 0rem;
   text-align: center;
-  font-size: 1.8rem
+  font-size: 1.8rem;
+  min-height: 4rem;
 }
 
 .business-card-container h4.role {
@@ -75,7 +76,8 @@
   font-weight: 700;
   letter-spacing: 0rem;
   text-align: center;
-  font-size: 1.8rem
+  font-size: 1.8rem;
+  min-height: 4rem;
 }
 
 .business-card-container-left h4.role {
