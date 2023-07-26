@@ -7,6 +7,7 @@ import { initialState, reducer } from "./reducer";
 import MyContext from "./context";
 import { SchemaService } from "../services/schemaService";
 import { GifService } from "../services/gifService";
+import { DataService } from "../services/dataService";
 import { store } from "../configure-store";
 import { Provider } from "react-redux";
 import React from "react";
@@ -26,7 +27,8 @@ function chunkArray(array: FixMeLater, chunkSize: number) {
   return chunks;
 }
 
-function renderSections({ gifsData }: FixMeLater) {
+function renderSections({ gifsData, unknownMerchantsData }: FixMeLater) {
+  console.log({ gifsData, unknownMerchantsData });
   const cardsSchema = SchemaService.getCardsSchema;
   const maxNumberOfCardsInRow = 4;
   const chunkedArray = chunkArray(cardsSchema, maxNumberOfCardsInRow);
@@ -65,6 +67,7 @@ function validateGifsHeight({ gifs }: FixMeLater) {
 export default function Content() {
   const [showToast, setshowToast] = useState(true);
   const [gifsData, setGifsData] = useState(null);
+  const [unknownMerchantsData, setUnknownMerchantsData] = useState(null);
 
   useEffect(() => {
     const isMobile = window.innerWidth < 768;
@@ -90,6 +93,19 @@ export default function Content() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    async function fetchUnknownMerchantsData() {
+      const unknownMerchants = await DataService.getUnknownMerchantsData();
+      console.log({ unknownMerchants });
+      //@ts-ignore
+      setUnknownMerchantsData({ unknownMerchants });
+    }
+    if (!unknownMerchantsData) {
+      fetchUnknownMerchantsData();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <Provider store={store}>
       <main className="content">
@@ -99,7 +115,7 @@ export default function Content() {
             customComponent={state?.customComponent || "funFacts"}
             noButton={true}
           ></Backdrop>
-          {renderSections({ gifsData })}
+          {renderSections({ gifsData, unknownMerchantsData })}
         </MyContext.Provider>
       </main>
     </Provider>
